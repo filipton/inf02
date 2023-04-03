@@ -747,6 +747,8 @@ dependencies = [
  "anyhow",
  "html_parser",
  "reqwest",
+ "serde",
+ "serde_json",
  "tokio",
 ]
 
