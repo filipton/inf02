@@ -1,18 +1,27 @@
 <script lang="ts">
     import { onMount } from "svelte";
 
-    let stateShowAnwsers = false;
+    let allQuestions: Question[] = [];
+    let questions: Question[] = [];
+    let percentage = 0;
+    let ended = false;
 
     onMount(async () => {
         await loadBase();
+        await getAnwsers();
     });
 
-    let questions: Question[] = [];
     async function loadBase() {
         const response = await fetch("/baza.json");
-        questions = await response.json();
+        allQuestions = await response.json();
+    }
 
-        questions = questions.splice(0, 10);
+    async function getAnwsers() {
+        // deep copy
+        questions = JSON.parse(JSON.stringify(allQuestions));
+        shuffleArray(questions);
+        questions = questions.slice(0, 40);
+
         await scrambleAnwsers();
     }
 
@@ -48,6 +57,11 @@
         }
     }
 
+    function percentageColor() {
+        if (percentage < 0.5) return "bg-red-600";
+        return "bg-lime-600";
+    }
+
     function shuffleArray(array: any[]) {
         for (var i = array.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
@@ -58,15 +72,20 @@
     }
 
     async function end() {
-        stateShowAnwsers = true;
+        if (ended) {
+            await getAnwsers();
+            ended = false;
+            window.scrollTo({ top: 0, behavior: "smooth" });
 
-        let percentage =
+            return;
+        }
+
+        ended = true;
+        percentage =
             questions.filter((x) => x.selected == x.correct).length /
             questions.length;
 
-        console.log(
-            `Zdobyłeś ${Math.round(percentage * 100)}% poprawnych odpowiedzi!`
-        );
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     type Question = {
@@ -78,9 +97,15 @@
     };
 </script>
 
-{stateShowAnwsers}
-
 <div class="mt-6 w-full max-w-2xl mx-auto text-white px-2">
+    {#if ended}
+        <span
+            class="block w-full text-white py-2 px-4 my-4 rounded center text-center {percentageColor()}"
+        >
+            Zdobyłeś {percentage * 100}%!
+        </span>
+    {/if}
+
     {#each questions as question}
         <div class="question mb-12">
             <div>
@@ -101,7 +126,7 @@
             </div>
 
             <div>
-                {#if question.selected === undefined && stateShowAnwsers}
+                {#if question.selected === undefined && ended}
                     <span
                         class="block w-full bg-red-600 text-white py-2 px-4 rounded center"
                     >
@@ -114,10 +139,10 @@
                             class="block w-full bg-gray-900 text-white py-2 px-4 rounded mb-1 {buttonColor(
                                 question,
                                 i,
-                                stateShowAnwsers
+                                ended
                             )}"
                             on:click={() => {
-                                if (stateShowAnwsers) return;
+                                if (ended) return;
                                 question.selected = i + 1;
                             }}
                         >
@@ -129,10 +154,18 @@
         </div>
     {/each}
 
+    {#if ended}
+        <span
+            class="block w-full text-white py-2 px-4 rounded my-4 center text-center {percentageColor()}"
+        >
+            Zdobyłeś {percentage * 100}%!
+        </span>
+    {/if}
+
     <button
         class="block w-full bg-gray-900 text-white py-2 px-4 rounded my-2 hover:bg-gray-800"
         on:click={end}
     >
-        END
+        {ended ? "Nastepny test" : "Zakoncz test"}
     </button>
 </div>
