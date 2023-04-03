@@ -53,14 +53,81 @@ async fn main() -> Result<()> {
     let div = find_by_name_class_wo_style(&div, "div", vec!["row"]);
     let div = find_by_name_class(&div, "div", vec!["col-md-9"]);
 
+    let mut questions: Vec<Question> = Vec::new();
+
+    let mut tmp_inside = false;
+    let mut tmp_question: String = String::new();
+    let mut tmp_image: Option<String> = None;
+    let mut tmp_anwsers: Vec<String> = Vec::new();
+    let mut tmp_correct: usize = 5;
+
     for child in div.children {
         let elem = child.element().unwrap();
         let classes = &elem.classes;
 
         if classes == &vec!["trescE"] {
-            println!("{:?}", elem.children.iter().find_map(|t| t.text()).unwrap());
+            tmp_inside = true;
+            tmp_image = None;
+            tmp_anwsers = vec![];
+            tmp_correct = 5;
+
+            tmp_question = elem
+                .children
+                .iter()
+                .find_map(|t| t.text())
+                .unwrap()
+                .splitn(2, '.')
+                .collect::<Vec<&str>>()[1]
+                .trim()
+                .to_owned();
+        }
+
+        if tmp_inside {
+            if classes == &vec!["obrazek"] {
+                tmp_image = elem
+                    .children
+                    .iter()
+                    .find_map(|img| img.element())
+                    .unwrap()
+                    .attributes
+                    .get("src")
+                    .unwrap()
+                    .to_owned();
+            } else if classes.len() == 1 && classes[0].starts_with("odp") {
+                let anwser_text = elem
+                    .children
+                    .iter()
+                    .find_map(|t| t.text())
+                    .unwrap()
+                    .to_owned();
+
+                tmp_anwsers.push(anwser_text);
+
+                if classes[0].ends_with("good") {
+                    tmp_correct = tmp_anwsers.len();
+                }
+            } else if classes == &vec!["sep"] {
+                tmp_inside = false;
+
+                questions.push(Question {
+                    text: tmp_question.clone(),
+                    image: tmp_image.clone(),
+                    anwsers: tmp_anwsers.clone(),
+                    correct: tmp_correct,
+                });
+            }
         }
     }
 
+    println!("{:#?}", questions);
+
     Ok(())
+}
+
+#[derive(Debug)]
+pub struct Question {
+    pub text: String,
+    pub image: Option<String>,
+    pub anwsers: Vec<String>,
+    pub correct: usize,
 }
