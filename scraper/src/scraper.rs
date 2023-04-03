@@ -125,7 +125,10 @@ pub async fn scrape_40(client: &Client, from: i32) -> Result<Vec<Question>> {
 #[derive(Debug, serde::Serialize)]
 pub struct Question {
     pub text: String,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub image: Option<String>,
+
     pub anwsers: Vec<String>,
     pub correct: usize,
 }
