@@ -48,11 +48,7 @@
             if (q.selected !== q.correct) return "bg-red-600";
         }
 
-        if (
-            stateShowAnwsers &&
-            q.selected === undefined &&
-            q.correct == index + 1
-        ) {
+        if (stateShowAnwsers && q.correct == index + 1) {
             return "bg-lime-600";
         }
     }
@@ -102,7 +98,7 @@
         <span
             class="block w-full text-white py-2 px-4 my-4 rounded center text-center {percentageColor()}"
         >
-            Zdobyłeś {percentage * 100}%!
+            Zdobyłeś {percentage * 100}%! [{percentage * 40}/40]
         </span>
     {/if}
 
@@ -158,7 +154,7 @@
         <span
             class="block w-full text-white py-2 px-4 rounded my-4 center text-center {percentageColor()}"
         >
-            Zdobyłeś {percentage * 100}%!
+            Zdobyłeś {percentage * 100}%! [{percentage * 40}/40]
         </span>
     {/if}
 
