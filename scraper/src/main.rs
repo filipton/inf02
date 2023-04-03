@@ -1,5 +1,12 @@
 use anyhow::Result;
+use html_parser::Element;
 use std::collections::HashMap;
+
+use crate::utils::{
+    find_by_name, find_by_name_class, find_by_name_class_wo_style, find_by_name_id,
+};
+
+mod utils;
 
 const QUESTION_PREFIX: &'static str = "pyt";
 
@@ -20,8 +27,6 @@ async fn main() -> Result<()> {
         question_id += 1;
     }
 
-    println!("{:?}", ex_map);
-
     let res = client
         .post("https://egzamin-informatyk.pl/odpowiedzi-inf02-ee08-sprzet-systemy-sieci/")
         .form(&ex_map)
@@ -30,7 +35,32 @@ async fn main() -> Result<()> {
         .send()
         .await?;
 
-    println!("{:?}", res.text().await?);
+    let res_html = res.text().await?;
+    let html = html_parser::Dom::parse(&res_html)?;
+
+    let html = html
+        .children
+        .iter()
+        .find(|h| h.element().unwrap().name == "html")
+        .unwrap()
+        .element()
+        .unwrap();
+
+    let body = find_by_name(html, "body");
+    let main = find_by_name(&body, "main");
+    let section = find_by_name_id(&main, "section", "portfolio");
+    let div = find_by_name_class(&section, "div", vec!["container", "inner", "light-bg"]);
+    let div = find_by_name_class_wo_style(&div, "div", vec!["row"]);
+    let div = find_by_name_class(&div, "div", vec!["col-md-9"]);
+
+    for child in div.children {
+        let elem = child.element().unwrap();
+        let classes = &elem.classes;
+
+        if classes == &vec!["trescE"] {
+            println!("{:?}", elem.children.iter().find_map(|t| t.text()).unwrap());
+        }
+    }
 
     Ok(())
 }
