@@ -17,30 +17,19 @@
 
     function onScroll() {
         if (shownQuestions.length >= allQuestions.length) return;
+        let fromBottom =
+            document.documentElement.scrollHeight -
+            window.innerHeight -
+            window.scrollY;
 
-        const lastQuestion = document.querySelector(
-            ".question:last-child"
-        ) as HTMLElement;
-        if (isInViewport(lastQuestion)) {
+        if (fromBottom < 10000) {
             lazyLoad();
         }
     }
 
-    function lazyLoad(count: number = 100) {
+    function lazyLoad(count: number = 50) {
         let questions = allQuestions.slice(0, shownQuestions.length + count);
         shownQuestions = questions;
-    }
-
-    function isInViewport(element: HTMLElement) {
-        const rect = element.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <=
-                (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <=
-                (window.innerWidth || document.documentElement.clientWidth)
-        );
     }
 </script>
 
@@ -52,7 +41,7 @@
             class="w-full h-12 bg-gray-600 text-white mb-8 rounded"
             on:click={() => lazyLoad(2227)}
         >
-            LOAD EVERYTHING (BIG LAG)
+            LOAD EVERYTHING (HUGE LAG)
         </button>
     {/if}
 
