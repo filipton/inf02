@@ -3,6 +3,7 @@
     import { questions } from "$lib/stores";
     import QuestionElement from "$lib/components/QuestionElement.svelte";
     import { browser } from "$app/environment";
+    import QuestionsHandler from "$lib/components/QuestionsHandler.svelte";
 
     let allQuestions: Question[] = [];
     let shownQuestions: Question[] = [];
@@ -66,7 +67,7 @@
     }
 </script>
 
-<div class="mt-6 w-full max-w-2xl mx-auto text-white px-2">
+<QuestionsHandler>
     {#if ended}
         <span
             class="block w-full text-white py-2 px-4 my-4 rounded center text-center {percentageColor()}"
@@ -85,4 +86,4 @@
     >
         {ended ? "Nastepny test" : "Zakoncz test"}
     </button>
-</div>
+</QuestionsHandler>

@@ -18,10 +18,8 @@
     }
 
     function calcCurrent(clicked: HTMLElement) {
-        let clickedWidth = clicked.offsetWidth;
-        let clickedLeft = clicked.offsetLeft - current.offsetLeft - 8;
-
-        console.log(clickedWidth);
+        let clickedWidth = clicked.offsetWidth + 4;
+        let clickedLeft = clicked.offsetLeft - current.offsetLeft - 8 - 2;
 
         document.documentElement.style.setProperty(
             "--current-width",
@@ -43,7 +41,7 @@
             <a on:click={navClick} href="/tests" class="text-white p-2">TESTY</a
             >
         </div>
-        <div class="flex w-1/3">
+        <div class="flex">
             <a
                 on:click={navClick}
                 href="/"
@@ -75,6 +73,7 @@
         */
     }
 
+    /*
     @keyframes show {
         0% {
             opacity: 0;
@@ -83,4 +82,5 @@
             opacity: 1;
         }
     }
+    */
 </style>

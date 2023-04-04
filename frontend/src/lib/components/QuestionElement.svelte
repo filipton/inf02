@@ -4,6 +4,7 @@
     export let question: Question;
     export let questionNumber: number;
     export let ended: boolean;
+    export let showDidntChoose: boolean = true;
 
     function buttonColor(
         q: Question,
@@ -44,7 +45,7 @@
     </div>
 
     <div>
-        {#if question.selected === undefined && ended}
+        {#if question.selected === undefined && ended && showDidntChoose}
             <span
                 class="block w-full bg-red-600 text-white py-2 px-4 rounded center"
             >
