@@ -4,7 +4,6 @@
     export let question: Question;
     export let questionNumber: number;
     export let ended: boolean;
-    export let debugString: string;
 
     function buttonColor(
         q: Question,
@@ -32,7 +31,6 @@
     <div>
         <h2 class="font-bold text-xl text-center py-4 px-2 mb-2 bg-gray-900">
             {questionNumber}. {question.text}
-            [{debugString}]
         </h2>
 
         {#if question.image}

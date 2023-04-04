@@ -2,7 +2,6 @@
     import { onMount } from "svelte";
     import type { Question } from "$lib/types";
     import QuestionElement from "$lib/components/QuestionElement.svelte";
-    import { text } from "svelte/internal";
 
     let allQuestions: Question[] = [];
     let questions: Question[] = [];
@@ -15,7 +14,7 @@
     });
 
     async function loadBase() {
-        const response = await fetch("/baza.json");
+        const response = await fetch("/base.json");
         allQuestions = await response.json();
     }
 
@@ -55,7 +54,7 @@
         if (ended) {
             await getAnwsers();
             ended = false;
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            window.scrollTo({ top: 0 });
 
             return;
         }
@@ -79,16 +78,7 @@
     {/if}
 
     {#each questions as question, i}
-        <QuestionElement
-            {question}
-            questionNumber={i + 1}
-            {ended}
-            debugString={allQuestions
-                .findIndex(
-                    (x) => x.text == question.text && x.image == question.image
-                )
-                .toString()}
-        />
+        <QuestionElement {question} questionNumber={i + 1} {ended} />
     {/each}
 
     <button
