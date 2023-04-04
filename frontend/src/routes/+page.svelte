@@ -1,34 +1,32 @@
 <script lang="ts">
-    import { onMount } from "svelte";
     import type { Question } from "$lib/types";
+    import { questions } from "$lib/stores";
     import QuestionElement from "$lib/components/QuestionElement.svelte";
+    import { browser } from "$app/environment";
 
     let allQuestions: Question[] = [];
-    let questions: Question[] = [];
+    let shownQuestions: Question[] = [];
     let percentage = 0;
     let ended = false;
 
-    onMount(async () => {
-        await loadBase();
+    questions.subscribe(async (x) => {
+        if (!browser) return;
+
+        allQuestions = x;
         await getAnwsers();
     });
 
-    async function loadBase() {
-        const response = await fetch("/base.json");
-        allQuestions = await response.json();
-    }
-
     async function getAnwsers() {
         // deep copy
-        questions = JSON.parse(JSON.stringify(allQuestions));
-        shuffleArray(questions);
-        questions = questions.slice(0, 40);
+        shownQuestions = JSON.parse(JSON.stringify(allQuestions));
+        shuffleArray(shownQuestions);
+        shownQuestions = shownQuestions.slice(0, 40);
 
         await scrambleAnwsers();
     }
 
     async function scrambleAnwsers() {
-        for (const question of questions) {
+        for (const question of shownQuestions) {
             let old = question.anwsers[question.correct - 1];
             shuffleArray(question.anwsers);
 
@@ -50,7 +48,7 @@
         }
     }
 
-    async function end() {
+    async function bottomButton() {
         if (ended) {
             await getAnwsers();
             ended = false;
@@ -61,8 +59,8 @@
 
         ended = true;
         percentage =
-            questions.filter((x) => x.selected == x.correct).length /
-            questions.length;
+            shownQuestions.filter((x) => x.selected == x.correct).length /
+            shownQuestions.length;
 
         window.scrollTo({ top: 0 });
     }
@@ -77,13 +75,13 @@
         </span>
     {/if}
 
-    {#each questions as question, i}
+    {#each shownQuestions as question, i}
         <QuestionElement {question} questionNumber={i + 1} {ended} />
     {/each}
 
     <button
         class="block w-full bg-gray-900 text-white py-2 px-4 rounded my-2 hover:bg-gray-800"
-        on:click={end}
+        on:click={bottomButton}
     >
         {ended ? "Nastepny test" : "Zakoncz test"}
     </button>
