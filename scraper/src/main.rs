@@ -6,15 +6,14 @@ use std::path::PathBuf;
 mod scraper;
 mod utils;
 
-const BASE_URL: &'static str =
-    "https://egzamin-informatyk.pl/odpowiedzi-inf02-ee08-sprzet-systemy-sieci/";
+const BASE_URL: &'static str = "https://egzamin-informatyk.pl";
 
 #[tokio::main]
 async fn main() -> Result<()> {
     let client = reqwest::Client::new();
 
     let images_dir = PathBuf::from("./images");
-    std::fs::create_dir(&images_dir)?;
+    _ = std::fs::create_dir(&images_dir);
 
     let mut questions_combined: Vec<Question> = Vec::new();
 
@@ -43,15 +42,14 @@ async fn main() -> Result<()> {
         if question.image.is_some() {
             let image = question.image.clone().unwrap();
             let image_bytes = client
-                .get(format!("{}{}", BASE_URL, &image))
+                .get(format!("{}{}", BASE_URL, &image.trim_start_matches("..")))
                 .send()
                 .await?
                 .bytes()
                 .await?;
 
-            let image_name = PathBuf::from(image);
-            let image_name = image_name.file_name().unwrap();
-            questions_combined[i].image = Some(image_name.to_str().unwrap().to_owned());
+            let image_name = format!("{}.png", i);
+            questions_combined[i].image = Some(image_name.clone());
 
             let image_path = images_dir.join(image_name);
             std::fs::write(image_path, image_bytes)?;
@@ -62,7 +60,7 @@ async fn main() -> Result<()> {
     println!("len: {}", questions_combined.len());
 
     let base_json = serde_json::to_string_pretty(&questions_combined)?;
-    std::fs::write(PathBuf::from("/tmp/baza.json"), base_json)?;
+    std::fs::write(PathBuf::from("base.json"), base_json)?;
 
     Ok(())
 }
