@@ -51,6 +51,8 @@
         if (stateShowAnwsers && q.correct == index + 1) {
             return "bg-lime-600";
         }
+
+        return "bg-gray-900";
     }
 
     function percentageColor() {
@@ -132,7 +134,7 @@
                 <div class="anwsers mt-4">
                     {#each question.anwsers as anwser, i}
                         <button
-                            class="block w-full bg-gray-900 text-white py-2 px-4 rounded mb-1 {buttonColor(
+                            class="block w-full text-white py-2 px-4 rounded mb-1 {buttonColor(
                                 question,
                                 i,
                                 ended
