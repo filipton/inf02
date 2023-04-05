@@ -6,37 +6,34 @@
     import { browser } from "$app/environment";
     import { shuffleArray } from "$lib/utils";
 
-    let allQuestions: Question[] = [];
     let questionsPool: Question[] = [];
     let shownQuestion: Question;
     let shownQuestionId: number;
 
     let selected = false;
 
-    questions.subscribe(async (x) => {
+    questions.subscribe(async () => {
         if (!browser) return;
-
-        allQuestions = x;
-        questionsPool = JSON.parse(JSON.stringify(x));
         await getNextQuestion();
     });
 
     async function getNextQuestion() {
         selected = false;
         if (questionsPool.length == 0) {
-            questionsPool = JSON.parse(JSON.stringify(allQuestions));
+            questionsPool = JSON.parse(JSON.stringify($questions));
         }
 
         let randomId = Math.floor(Math.random() * questionsPool.length);
         shownQuestion = questionsPool[randomId];
         questionsPool = removeAt(questionsPool, randomId);
 
-        shownQuestionId = allQuestions.findIndex(
+        shownQuestionId = $questions.findIndex(
             (x) =>
                 x.text == shownQuestion.text &&
                 x.correct == shownQuestion.correct &&
                 x.image == shownQuestion.image
         );
+
         await scrambleAnwsers();
     }
 
@@ -53,9 +50,26 @@
     }
 
     async function onKeyDown(e: KeyboardEvent) {
-        if (e.key === "ArrowRight") {
-            await getNextQuestion();
-            console.log(questionsPool.length);
+        switch (e.key) {
+            case "1":
+                shownQuestion.selected = 1;
+                selected = true;
+                return;
+            case "2":
+                shownQuestion.selected = 2;
+                selected = true;
+                return;
+            case "3":
+                shownQuestion.selected = 3;
+                selected = true;
+                return;
+            case "4":
+                shownQuestion.selected = 4;
+                selected = true;
+                return;
+            case "Enter":
+                await getNextQuestion();
+                return;
         }
     }
 </script>

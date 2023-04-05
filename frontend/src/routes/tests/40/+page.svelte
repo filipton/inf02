@@ -6,7 +6,7 @@
     import { browser } from "$app/environment";
     import { shuffleArray } from "$lib/utils";
 
-    let allQuestions: Question[] = [];
+    let questionPool: Question[] = [];
     let shownQuestions: Question[] = [];
     let percentage = 0;
     let ended = false;
@@ -14,15 +14,18 @@
     questions.subscribe(async (x) => {
         if (!browser) return;
 
-        allQuestions = x;
-        await getAnwsers();
+        questionPool = JSON.parse(JSON.stringify(x));
+        await getQuestionsSet();
     });
 
-    async function getAnwsers() {
-        // deep copy
-        shownQuestions = JSON.parse(JSON.stringify(allQuestions));
-        shuffleArray(shownQuestions);
-        shownQuestions = shownQuestions.slice(0, 40);
+    async function getQuestionsSet() {
+        if (questionPool.length < 40) {
+            questionPool = JSON.parse(JSON.stringify($questions));
+        }
+
+        shuffleArray(questionPool);
+        shownQuestions = questionPool.slice(0, 40);
+        questionPool = questionPool.slice(40);
 
         await scrambleAnwsers();
     }
@@ -43,7 +46,7 @@
 
     async function bottomButton() {
         if (ended) {
-            await getAnwsers();
+            await getQuestionsSet();
             ended = false;
             window.scrollTo({ top: 0 });
 
