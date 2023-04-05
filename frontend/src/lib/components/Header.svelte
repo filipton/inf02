@@ -5,7 +5,7 @@
     onMount(() => {
         let url = window.location.href;
         let clicked = document.querySelector(
-            `a[href="/${url.split("/").pop()}"]`
+            `a[href="/${url.split("/").slice(3)[0]}"]`
         ) as HTMLElement;
 
         calcCurrent(clicked);

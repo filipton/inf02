@@ -1,10 +1,13 @@
 <script lang="ts">
     import type { Question } from "$lib/types";
+    import { createEventDispatcher } from "svelte";
 
     export let question: Question;
     export let questionNumber: number;
     export let ended: boolean;
     export let showDidntChoose: boolean = true;
+
+    let dispatch = createEventDispatcher();
 
     function buttonColor(
         q: Question,
@@ -28,6 +31,7 @@
     }
 </script>
 
+{#if question}
 <div class="question mb-12">
     <div>
         <h2 class="font-bold text-xl text-center py-4 px-2 mb-2 bg-gray-900">
@@ -64,6 +68,8 @@
                     on:click={() => {
                         if (ended) return;
                         question.selected = i + 1;
+
+                        dispatch("click");
                     }}
                 >
                     {anwser}
@@ -72,3 +78,4 @@
         </div>
     </div>
 </div>
+{/if}
