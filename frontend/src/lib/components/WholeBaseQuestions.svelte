@@ -17,7 +17,8 @@
     let questionId: number;
     let selected = false;
 
-    $: percentageText = Math.round((good.length / $questions.length) * 100);
+    $: percentageText =
+        Math.round((good.length / $questions.length) * 10000) / 100;
 
     onMount(() => {});
 
@@ -112,6 +113,7 @@
     }
 
     function startOver() {
+        done = false;
         good = [];
         wrong = [];
 
