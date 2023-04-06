@@ -87,8 +87,6 @@
         );
     }
 
-    function onKeyDown(e: KeyboardEvent) {}
-
     function afterQuestion(e: any) {
         let correct = e.detail as boolean;
         selected = true;
@@ -122,6 +120,12 @@
 
         updateProgressBar();
         getNextQuestion();
+    }
+
+    function onKeyDown(e: KeyboardEvent) {
+        if (e.key == "Enter") {
+            getNextQuestion();
+        }
     }
 </script>
 
@@ -157,6 +161,7 @@
             {question}
             questionNumber={questionId}
             ended={selected}
+            useKeyboard={true}
             on:click={afterQuestion}
         />
     {/if}

@@ -6,6 +6,7 @@
     export let questionNumber: number;
     export let ended: boolean;
     export let showDidntChoose: boolean = true;
+    export let useKeyboard: boolean = false;
 
     let dispatch = createEventDispatcher();
 
@@ -33,7 +34,27 @@
     function isCorrect(): boolean {
         return question.selected === question.correct;
     }
+
+    function onKeyDown(e: KeyboardEvent) {
+        if (!useKeyboard) return;
+
+        if (e.key === "1") {
+            question.selected = 1;
+            dispatch("click", isCorrect());
+        } else if (e.key === "2") {
+            question.selected = 2;
+            dispatch("click", isCorrect());
+        } else if (e.key === "3") {
+            question.selected = 3;
+            dispatch("click", isCorrect());
+        } else if (e.key === "4") {
+            question.selected = 4;
+            dispatch("click", isCorrect());
+        }
+    }
 </script>
+
+<svelte:window on:keydown={onKeyDown} />
 
 {#if question}
     <div class="question mb-12">
