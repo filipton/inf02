@@ -29,53 +29,59 @@
 
         return "bg-gray-900";
     }
+
+    function isCorrect(): boolean {
+        return question.selected === question.correct;
+    }
 </script>
 
 {#if question}
-<div class="question mb-12">
-    <div>
-        <h2 class="font-bold text-xl text-center py-4 px-2 mb-2 bg-gray-900">
-            {questionNumber}. {question.text}
-        </h2>
-
-        {#if question.image}
-            <img
-                class="mx-auto"
-                width="100%"
-                src="/images/{question.image}"
-                alt=""
-            />
-        {/if}
-    </div>
-
-    <div>
-        {#if question.selected === undefined && ended && showDidntChoose}
-            <span
-                class="block w-full bg-red-600 text-white py-2 px-4 rounded center"
+    <div class="question mb-12">
+        <div>
+            <h2
+                class="font-bold text-xl text-center py-4 px-2 mb-2 bg-gray-900"
             >
-                Nie zaznaczyles odpowiedzi!
-            </span>
-        {/if}
+                {questionNumber}. {question.text}
+            </h2>
 
-        <div class="anwsers mt-4">
-            {#each question.anwsers as anwser, i}
-                <button
-                    class="block w-full text-white py-2 px-4 rounded mb-1 {buttonColor(
-                        question,
-                        i,
-                        ended
-                    )}"
-                    on:click={() => {
-                        if (ended) return;
-                        question.selected = i + 1;
+            {#if question.image}
+                <img
+                    class="mx-auto"
+                    width="100%"
+                    src="/images/{question.image}"
+                    alt=""
+                />
+            {/if}
+        </div>
 
-                        dispatch("click");
-                    }}
+        <div>
+            {#if question.selected === undefined && ended && showDidntChoose}
+                <span
+                    class="block w-full bg-red-600 text-white py-2 px-4 rounded center"
                 >
-                    {anwser}
-                </button>
-            {/each}
+                    Nie zaznaczyles odpowiedzi!
+                </span>
+            {/if}
+
+            <div class="anwsers mt-4">
+                {#each question.anwsers as anwser, i}
+                    <button
+                        class="block w-full text-white py-2 px-4 rounded mb-1 {buttonColor(
+                            question,
+                            i,
+                            ended
+                        )}"
+                        on:click={() => {
+                            if (ended) return;
+                            question.selected = i + 1;
+
+                            dispatch("click", isCorrect());
+                        }}
+                    >
+                        {anwser}
+                    </button>
+                {/each}
+            </div>
         </div>
     </div>
-</div>
 {/if}

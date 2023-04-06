@@ -12,11 +12,4 @@
     >
         TEST 40 Pytan
     </a>
-
-    <a
-        href="/tests/base"
-        class="block w-full bg-gray-900 py-2 px-4 rounded my-2 hover:bg-gray-800"
-    >
-        TEST CALA BAZA
-    </a>
 </div>
