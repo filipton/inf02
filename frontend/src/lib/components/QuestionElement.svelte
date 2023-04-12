@@ -62,7 +62,7 @@
             <h2
                 class="font-bold text-xl text-center py-4 px-2 mb-2 bg-gray-900"
             >
-                {questionNumber}. {question.text}
+                {questionNumber}. {@html question.text}
             </h2>
 
             {#if question.image}
@@ -99,7 +99,7 @@
                             dispatch("click", isCorrect());
                         }}
                     >
-                        {anwser}
+                        {@html anwser}
                     </button>
                 {/each}
             </div>
