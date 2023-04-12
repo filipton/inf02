@@ -14,7 +14,6 @@
 
     let pool: Question[] = [];
     let question: Question;
-    let questionId: number;
     let selected = false;
 
     $: percentageText =
@@ -26,6 +25,11 @@
         if (!browser) return;
         wrong = JSON.parse(localStorage.getItem("qWrong") ?? "[]");
         good = JSON.parse(localStorage.getItem("qGood") ?? "[]");
+
+        wrong = [...new Set(wrong)];
+        good = [...new Set(good)];
+        localStorage.setItem("qWrong", JSON.stringify(wrong));
+        localStorage.setItem("qGood", JSON.stringify(good));
 
         // deep copy
         pool = JSON.parse(JSON.stringify(qs));
@@ -61,13 +65,6 @@
         question = pool[0];
         pool = pool.slice(1);
 
-        questionId = $questions.findIndex(
-            (x) =>
-                x.text == question.text &&
-                x.correct == question.correct &&
-                x.image == question.image
-        );
-
         await scrambleAnwsers();
     }
 
@@ -92,15 +89,15 @@
         selected = true;
 
         if (correct) {
-            good.push(questionId);
+            good.push(question.id);
             good = good;
 
-            if (wrong.includes(questionId)) {
-                wrong = wrong.filter((x) => x != questionId);
+            if (wrong.includes(question.id)) {
+                wrong = wrong.filter((x) => x != question.id);
             }
         } else {
-            if (!wrong.includes(questionId)) {
-                wrong.push(questionId);
+            if (!wrong.includes(question.id)) {
+                wrong.push(question.id);
                 wrong = wrong;
             }
         }
@@ -159,7 +156,7 @@
 
         <QuestionElement
             {question}
-            questionNumber={questionId}
+            questionNumber={question ? question.id : -1}
             ended={selected}
             useKeyboard={true}
             on:click={afterQuestion}

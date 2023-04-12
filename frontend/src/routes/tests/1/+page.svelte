@@ -8,7 +8,6 @@
 
     let questionsPool: Question[] = [];
     let shownQuestion: Question;
-    let shownQuestionId: number;
 
     let selected = false;
 
@@ -26,13 +25,6 @@
         let randomId = Math.floor(Math.random() * questionsPool.length);
         shownQuestion = questionsPool[randomId];
         questionsPool = removeAt(questionsPool, randomId);
-
-        shownQuestionId = $questions.findIndex(
-            (x) =>
-                x.text == shownQuestion.text &&
-                x.correct == shownQuestion.correct &&
-                x.image == shownQuestion.image
-        );
 
         await scrambleAnwsers();
     }
@@ -86,7 +78,7 @@
 
     <QuestionElement
         question={shownQuestion}
-        questionNumber={shownQuestionId}
+        questionNumber={shownQuestion ? shownQuestion.id : -1}
         ended={selected}
         on:click={() => (selected = true)}
     />
