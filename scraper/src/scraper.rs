@@ -9,13 +9,13 @@ use std::collections::HashMap;
 pub async fn scrape_40(client: &Client, from: i32) -> Result<Vec<Question>> {
     let mut ex_map: HashMap<String, String> = HashMap::new();
     let mut question_id = from;
-
     for i in 1..=40 {
         ex_map.insert(format!("pyt{}", i), format!("{}", question_id));
         ex_map.insert(format!("orderodp{}", i), format!("1234"));
 
         question_id += 1;
     }
+    let mut question_id = from - 1;
 
     let res = client
         .post("https://egzamin-informatyk.pl/odpowiedzi-inf02-ee08-sprzet-systemy-sieci/")
@@ -60,15 +60,7 @@ pub async fn scrape_40(client: &Client, from: i32) -> Result<Vec<Question>> {
             tmp_anwsers = vec![];
             tmp_correct = 5;
 
-            tmp_question = elem
-                .children
-                .iter()
-                .find_map(|t| t.text())
-                .unwrap()
-                .splitn(2, '.')
-                .collect::<Vec<&str>>()[1]
-                .trim()
-                .to_owned();
+            tmp_question = get_element_string(elem, false);
         }
 
         if tmp_inside {
@@ -100,21 +92,25 @@ pub async fn scrape_40(client: &Client, from: i32) -> Result<Vec<Question>> {
                     tmp_inside = false;
 
                     questions.push(Question {
+                        id: question_id,
                         text: tmp_question.clone(),
                         image: tmp_image.clone(),
                         anwsers: tmp_anwsers.clone(),
                         correct: tmp_correct,
                     });
+                    question_id += 1;
                 }
             } else if classes == &vec!["sep"] {
                 tmp_inside = false;
 
                 questions.push(Question {
+                    id: question_id,
                     text: tmp_question.clone(),
                     image: tmp_image.clone(),
                     anwsers: tmp_anwsers.clone(),
                     correct: tmp_correct,
                 });
+                question_id += 1;
             }
         }
     }
@@ -122,8 +118,34 @@ pub async fn scrape_40(client: &Client, from: i32) -> Result<Vec<Question>> {
     Ok(questions)
 }
 
+fn get_element_string(elem: &html_parser::Element, deep: bool) -> String {
+    let t = elem
+        .children
+        .clone()
+        .into_iter()
+        .filter_map(|c| match c {
+            html_parser::Node::Text(t) => Some(t),
+            html_parser::Node::Element(e) => Some(format!(
+                " <{}>{}</{}> ",
+                e.name,
+                get_element_string(&e, true),
+                e.name
+            )),
+            html_parser::Node::Comment(_) => None,
+        })
+        .collect::<Vec<String>>()
+        .join("");
+
+    if deep {
+        return t;
+    }
+
+    return t.splitn(2, ". ").collect::<Vec<&str>>()[1].to_owned();
+}
+
 #[derive(Debug, serde::Serialize)]
 pub struct Question {
+    pub id: i32,
     pub text: String,
 
     #[serde(skip_serializing_if = "Option::is_none")]

@@ -28,7 +28,7 @@ async fn main() -> Result<()> {
     }
 
     // if not divisible by 40 run last scrape
-    let start_id = max - 40;
+    let start_id = max - 40 + 1;
     let skip = 40 - (max - (jumps * 40));
 
     let mut tmp_questions = scrape_40(&client, start_id).await?;
