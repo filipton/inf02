@@ -3,7 +3,7 @@
     "short_name": "INF02",
     "theme_color": "#000000",
     "background_color": "#000000",
-    "display": "minimal-ui",
+    "display": "standalone",
     "start_url": "/",
     "icons": [
         {
