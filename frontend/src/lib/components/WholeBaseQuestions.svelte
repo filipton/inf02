@@ -96,10 +96,9 @@
                 wrong = wrong.filter((x) => x != question.id);
             }
         } else {
-            if (!wrong.includes(question.id)) {
-                wrong.push(question.id);
-                wrong = wrong;
-            }
+            wrong = wrong.filter((x) => x != question.id);
+            wrong.push(question.id);
+            wrong = wrong;
         }
 
         updateProgressBar();
