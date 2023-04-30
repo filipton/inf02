@@ -2,7 +2,7 @@
     import type { Question } from "$lib/types";
     import QuestionElement from "$lib/components/QuestionElement.svelte";
     import QuestionsHandler from "$lib/components/QuestionsHandler.svelte";
-    import { questions } from "$lib/stores";
+    import { questions, starred } from "$lib/stores";
     import { browser } from "$app/environment";
     import { shuffleArray, msToTime } from "$lib/utils";
 
@@ -15,13 +15,19 @@
     questions.subscribe(async (x) => {
         if (!browser) return;
 
-        questionPool = JSON.parse(JSON.stringify(x));
+        questionPool = JSON.parse(
+            JSON.stringify(x.filter((q) => $starred.includes(q.id)))
+        );
         await getQuestionsSet();
     });
 
     async function getQuestionsSet() {
         if (questionPool.length < 40) {
-            questionPool = JSON.parse(JSON.stringify($questions));
+            questionPool = JSON.parse(
+                JSON.stringify(
+                    $questions.filter((q) => $starred.includes(q.id))
+                )
+            );
         }
 
         shuffleArray(questionPool);
@@ -64,26 +70,34 @@
     }
 </script>
 
-<QuestionsHandler>
-    {#if ended}
-        <span
-            class="block w-full text-white py-2 px-4 my-4 rounded center text-center {percentageColor()}"
-        >
-            Zdobyłeś {percentage * 100}%! [{percentage * 40}/40]
-
-            <br />
-            W czasie: {msToTime(Date.now() - startedAt)}
-        </span>
-    {/if}
-
-    {#each shownQuestions as question, i}
-        <QuestionElement {question} questionNumber={i + 1} {ended} />
-    {/each}
-
-    <button
-        class="block w-full bg-gray-900 text-white py-2 px-4 rounded my-2 hover:bg-gray-800"
-        on:click={bottomButton}
+{#if shownQuestions.length < 40}
+    <span
+        class="block w-full text-white py-2 px-4 my-4 rounded center text-center"
     >
-        {ended ? "Nastepny test" : "Zakoncz test"}
-    </button>
-</QuestionsHandler>
+        Nie masz tylu pytan z gwiazdka!
+    </span>
+{:else}
+    <QuestionsHandler>
+        {#if ended}
+            <span
+                class="block w-full text-white py-2 px-4 my-4 rounded center text-center {percentageColor()}"
+            >
+                Zdobyłeś {percentage * 100}%! [{percentage * 40}/40]
+
+                <br />
+                W czasie: {msToTime(Date.now() - startedAt)}
+            </span>
+        {/if}
+
+        {#each shownQuestions as question, i}
+            <QuestionElement {question} questionNumber={i + 1} {ended} />
+        {/each}
+
+        <button
+            class="block w-full bg-gray-900 text-white py-2 px-4 rounded my-2 hover:bg-gray-800"
+            on:click={bottomButton}
+        >
+            {ended ? "Nastepny test" : "Zakoncz test"}
+        </button>
+    </QuestionsHandler>
+{/if}

@@ -35,7 +35,10 @@
         pool = JSON.parse(JSON.stringify(qs));
         pool = pool.filter((_, i) => !wrong.includes(i) && !good.includes(i));
 
-        updateProgressBar();
+        setPercentage(0);
+        setTimeout(() => {
+            updateProgressBar();
+        }, 10);
         await getNextQuestion();
     });
 
@@ -77,10 +80,12 @@
 
     function updateProgressBar() {
         let percentage = good.length / $questions.length;
-
+        setPercentage(percentage * 100);
+    }
+    function setPercentage(percentage: number) {
         document.documentElement.style.setProperty(
             "--percentage",
-            `${percentage * 100}%`
+            `${percentage}%`
         );
     }
 
@@ -164,10 +169,6 @@
 </QuestionsHandler>
 
 <style>
-    ::root {
-        --percentage: 0%;
-    }
-
     .bar {
         width: var(--percentage);
         transition: width 0.5s ease;

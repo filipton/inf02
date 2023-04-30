@@ -29,3 +29,13 @@ export function shuffleArray(array: any[]) {
         array[j] = temp;
     }
 }
+
+export function msToTime(duration: number) {
+    var seconds = Math.floor((duration / 1000) % 60).toString(),
+        minutes = Math.floor((duration / (1000 * 60)) % 60).toString();
+
+    if (+minutes < 10) minutes = "0" + minutes;
+    if (+seconds < 10) seconds = "0" + seconds;
+
+    return minutes + ":" + seconds;
+}
