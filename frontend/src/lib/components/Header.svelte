@@ -1,6 +1,17 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import { navigating } from "$app/stores";
     let current: HTMLElement;
+
+    navigating.subscribe((n) => {
+        if (n) {
+            let url = window.location.href;
+            let clicked = document.querySelector(
+                `a[href="/${url.split("/").slice(3)[0]}"]`
+            ) as HTMLElement;
+            calcCurrent(clicked);
+        }
+    });
 
     onMount(() => {
         let url = window.location.href;
