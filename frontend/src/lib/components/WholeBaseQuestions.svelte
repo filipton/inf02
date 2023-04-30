@@ -155,7 +155,7 @@
 
         <QuestionElement
             {question}
-            questionNumber={question ? question.id : -1}
+            questionNumber={question ? question.id + 1 : -1}
             ended={selected}
             useKeyboard={true}
             on:click={afterQuestion}

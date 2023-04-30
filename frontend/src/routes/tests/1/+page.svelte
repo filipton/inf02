@@ -78,7 +78,7 @@
 
     <QuestionElement
         question={shownQuestion}
-        questionNumber={shownQuestion ? shownQuestion.id : -1}
+        questionNumber={shownQuestion ? shownQuestion.id + 1 : -1}
         ended={selected}
         on:click={() => (selected = true)}
     />
