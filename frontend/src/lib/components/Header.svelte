@@ -5,7 +5,7 @@
 
     navigating.subscribe((n) => {
         if (n) {
-            let url = window.location.href;
+            let url = n.to?.url.toString() ?? "";
             let clicked = document.querySelector(
                 `a[href="/${url.split("/").slice(3)[0]}"]`
             ) as HTMLElement;
@@ -21,12 +21,6 @@
 
         calcCurrent(clicked);
     });
-
-    function navClick() {
-        //@ts-ignore
-        let clicked = this as HTMLElement;
-        calcCurrent(clicked);
-    }
 
     function calcCurrent(clicked: HTMLElement) {
         let clickedWidth = clicked.offsetWidth + 4;
@@ -49,19 +43,15 @@
 >
     <div class="flex justify-between">
         <div class="flex">
-            <a on:click={navClick} href="/tests" class="text-white p-2">TESTY</a
-            >
+            <a href="/tests" class="text-white p-2">TESTY</a>
         </div>
         <div class="flex">
-            <a
-                on:click={navClick}
-                href="/"
-                class="text-white font-bold text-center w-full p-2"
+            <a href="/" class="text-white font-bold text-center w-full p-2"
                 >inf02.filipton.space</a
             >
         </div>
         <div class="flex">
-            <a on:click={navClick} href="/base" class="text-white p-2">BAZA</a>
+            <a href="/base" class="text-white p-2">BAZA</a>
         </div>
     </div>
 </div>
