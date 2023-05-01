@@ -14,6 +14,6 @@
     <WholeBaseTest key="q" {base} />
 {:else}
     <div class="flex flex-col items-center justify-center h-full mt-4">
-        <h1 class="text-2xl font-bold">Brak pytań w bazie!</h1>
+        <h1 class="text-2xl font-bold text-white">Brak pytań w bazie!</h1>
     </div>
 {/if}
