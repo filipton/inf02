@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { starred } from "$lib/stores";
     import type { Question } from "$lib/types";
+    import { questions } from "$lib/stores";
     import { createEventDispatcher } from "svelte";
 
     export let question: Question;
@@ -8,12 +8,6 @@
     export let ended: boolean;
     export let showDidntChoose: boolean = true;
     export let useKeyboard: boolean = false;
-
-    let questionStarred: boolean = false;
-    starred.subscribe((q) => {
-        if (!q) return;
-        questionStarred = q.includes(question.id);
-    });
 
     let dispatch = createEventDispatcher();
 
@@ -38,17 +32,23 @@
         return "bg-gray-900";
     }
 
-    function isCorrect(): boolean {
-        return question.selected === question.correct;
+    function starClick() {
+        questions.update((qs) => {
+            let questionIdx = qs.findIndex((q) => q.id == question.id);
+            qs[questionIdx].starred = !qs[questionIdx].starred;
+
+            let starred = qs.filter((q) => q.starred).map((q) => q.id);
+            localStorage.setItem("starred", JSON.stringify(starred));
+
+            return qs;
+        });
+
+        question.starred = !question.starred;
+        dispatch("starred", question.starred);
     }
 
-    function starClick() {
-        if (questionStarred) {
-            starred.update((q) => q.filter((id) => id !== question.id));
-        } else {
-            starred.update((q) => [...q, question.id]);
-        }
-        localStorage.setItem("starred", JSON.stringify($starred));
+    function isCorrect(): boolean {
+        return question.selected === question.correct;
     }
 
     function onKeyDown(e: KeyboardEvent) {
@@ -82,7 +82,7 @@
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        fill={questionStarred ? "yellow" : "none"}
+                        fill={question.starred ? "yellow" : "none"}
                         viewBox="0 0 24 24"
                         stroke-width="1.5"
                         stroke="currentColor"

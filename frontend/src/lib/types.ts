@@ -5,4 +5,5 @@ export type Question = {
     anwsers: string[];
     correct: number;
     selected: number; // NOT IN JSON
+    starred: boolean; // NOT IN JSON
 };

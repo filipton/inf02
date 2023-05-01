@@ -6,19 +6,19 @@
     import { browser } from "$app/environment";
     import { shuffleArray } from "$lib/utils";
 
-    let questionsPool: Question[] = [];
+    let questionsPool: Question[];
     let shownQuestion: Question;
 
     let selected = false;
 
     questions.subscribe(async () => {
-        if (!browser) return;
+        if (!browser || questionsPool) return;
         await getNextQuestion();
     });
 
     async function getNextQuestion() {
         selected = false;
-        if (questionsPool.length == 0) {
+        if (!questionsPool || questionsPool.length == 0) {
             questionsPool = JSON.parse(JSON.stringify($questions));
         }
 

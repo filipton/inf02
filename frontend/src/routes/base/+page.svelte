@@ -11,11 +11,13 @@
     let searchQuery = "";
 
     questions.subscribe(async (x) => {
-        if (!browser) return;
+        if (!browser || !x) return;
 
-        base = x;
-        allQuestions = x;
-        lazyLoad();
+        if (base.length === 0) {
+            base = x;
+            allQuestions = x;
+            lazyLoad();
+        }
     });
 
     function search() {
@@ -77,6 +79,9 @@
             questionNumber={question.id + 1}
             ended={true}
             showDidntChoose={false}
+            on:starred={() => {
+                question.starred = !question.starred;
+            }}
         />
     {/each}
 </QuestionsHandler>

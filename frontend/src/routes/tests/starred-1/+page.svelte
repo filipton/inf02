@@ -2,29 +2,25 @@
     import type { Question } from "$lib/types";
     import QuestionElement from "$lib/components/QuestionElement.svelte";
     import QuestionsHandler from "$lib/components/QuestionsHandler.svelte";
-    import { starred, questions } from "$lib/stores";
+    import { questions } from "$lib/stores";
     import { browser } from "$app/environment";
     import { shuffleArray } from "$lib/utils";
 
-    let questionsPool: Question[] = [];
+    let questionsPool: Question[];
     let shownQuestion: Question;
 
     let selected = false;
 
     questions.subscribe(async () => {
-        if (!browser) return;
+        if (!browser || questionsPool) return;
         await getNextQuestion();
     });
 
     async function getNextQuestion() {
-        if ($starred.length == 0) return;
-
         selected = false;
-        if (questionsPool.length == 0) {
+        if (!questionsPool || questionsPool.length == 0) {
             questionsPool = JSON.parse(
-                JSON.stringify(
-                    $questions.filter((q) => $starred.includes(q.id))
-                )
+                JSON.stringify($questions.filter((q) => q.starred))
             );
         }
 

@@ -2,31 +2,27 @@
     import type { Question } from "$lib/types";
     import QuestionElement from "$lib/components/QuestionElement.svelte";
     import QuestionsHandler from "$lib/components/QuestionsHandler.svelte";
-    import { questions, starred } from "$lib/stores";
+    import { questions } from "$lib/stores";
     import { browser } from "$app/environment";
     import { shuffleArray, msToTime } from "$lib/utils";
 
-    let questionPool: Question[] = [];
+    let questionPool: Question[];
     let shownQuestions: Question[] = [];
     let percentage = 0;
     let startedAt = -1;
     let ended = false;
 
     questions.subscribe(async (x) => {
-        if (!browser) return;
+        if (!browser || questionPool) return;
 
-        questionPool = JSON.parse(
-            JSON.stringify(x.filter((q) => $starred.includes(q.id)))
-        );
+        questionPool = JSON.parse(JSON.stringify(x.filter((q) => q.starred)));
         await getQuestionsSet();
     });
 
     async function getQuestionsSet() {
-        if (questionPool.length < 40) {
+        if (!questionPool || questionPool.length < 40) {
             questionPool = JSON.parse(
-                JSON.stringify(
-                    $questions.filter((q) => $starred.includes(q.id))
-                )
+                JSON.stringify($questions.filter((q) => q.starred))
             );
         }
 
@@ -73,7 +69,9 @@
 <QuestionsHandler>
     {#if shownQuestions.length < 40}
         <div class="text-center">
-            <h1 class="text-2xl font-bold mb-4">Brak pytań z gwiazdka (min 40)</h1>
+            <h1 class="text-2xl font-bold mb-4">
+                Brak pytań z gwiazdka (min 40)
+            </h1>
         </div>
     {:else}
         {#if ended}

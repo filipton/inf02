@@ -2,57 +2,58 @@
     import QuestionsHandler from "./QuestionsHandler.svelte";
     import QuestionElement from "./QuestionElement.svelte";
     import type { Question } from "$lib/types";
-    import { questions } from "$lib/stores";
     import { onMount } from "svelte";
-    import { browser } from "$app/environment";
     import { shuffleArray } from "$lib/utils";
+    import { browser } from "$app/environment";
 
-    let done: boolean = false;
-
-    let wrong: number[] = [];
-    let good: number[] = [];
+    export let base: Question[] = [];
+    export let key: string = "q";
 
     let pool: Question[] = [];
     let question: Question;
-    let selected = false;
+    let wrong: number[] = [];
+    let good: number[] = [];
 
-    $: percentageText =
-        Math.round((good.length / $questions.length) * 10000) / 100;
+    let done: boolean = false;
+    let selected: boolean = false;
 
-    onMount(() => {});
+    $: percentageText = Math.round((good.length / base.length) * 10000) / 100;
 
-    questions.subscribe(async (qs) => {
+    onMount(async () => {
+        await init();
+    });
+
+    async function init() {
         if (!browser) return;
-        wrong = JSON.parse(localStorage.getItem("qWrong") ?? "[]");
-        good = JSON.parse(localStorage.getItem("qGood") ?? "[]");
-
+        wrong = JSON.parse(localStorage.getItem(`${key}Wrong`) ?? "[]");
+        good = JSON.parse(localStorage.getItem(`${key}Good`) ?? "[]");
         wrong = [...new Set(wrong)];
         good = [...new Set(good)];
-        localStorage.setItem("qWrong", JSON.stringify(wrong));
-        localStorage.setItem("qGood", JSON.stringify(good));
 
         // deep copy
-        pool = JSON.parse(JSON.stringify(qs));
-        pool = pool.filter((_, i) => !wrong.includes(i) && !good.includes(i));
+        pool = JSON.parse(JSON.stringify(base));
+        pool = pool.filter(
+            (q) => !wrong.includes(q.id) && !good.includes(q.id)
+        );
 
         setPercentage(0);
         setTimeout(() => {
             updateProgressBar();
         }, 10);
         await getNextQuestion();
-    });
+    }
 
     async function getNextQuestion() {
         if (!selected && question) return;
         selected = false;
 
-        if (good.length == $questions.length) {
+        if (good.length == base.length) {
             done = true;
             return;
         }
 
         if (pool.length == 0) {
-            pool = JSON.parse(JSON.stringify($questions));
+            pool = JSON.parse(JSON.stringify(base));
 
             let tmpPool = pool.filter(
                 (_, i) => !wrong.includes(i) && !good.includes(i)
@@ -79,7 +80,7 @@
     }
 
     function updateProgressBar() {
-        let percentage = good.length / $questions.length;
+        let percentage = good.length / base.length;
         setPercentage(percentage * 100);
     }
     function setPercentage(percentage: number) {
@@ -92,23 +93,18 @@
     function afterQuestion(e: any) {
         let correct = e.detail as boolean;
         selected = true;
+        wrong = wrong.filter((x) => x != question.id);
 
         if (correct) {
             good.push(question.id);
             good = good;
-
-            if (wrong.includes(question.id)) {
-                wrong = wrong.filter((x) => x != question.id);
-            }
         } else {
-            wrong = wrong.filter((x) => x != question.id);
             wrong.push(question.id);
             wrong = wrong;
         }
 
         updateProgressBar();
-        localStorage.setItem("qWrong", JSON.stringify(wrong));
-        localStorage.setItem("qGood", JSON.stringify(good));
+        save();
     }
 
     function startOver() {
@@ -116,11 +112,14 @@
         good = [];
         wrong = [];
 
-        localStorage.setItem("qWrong", JSON.stringify(wrong));
-        localStorage.setItem("qGood", JSON.stringify(good));
-
         updateProgressBar();
         getNextQuestion();
+        save();
+    }
+
+    function save() {
+        localStorage.setItem(`${key}Wrong`, JSON.stringify(wrong));
+        localStorage.setItem(`${key}Good`, JSON.stringify(good));
     }
 
     function onKeyDown(e: KeyboardEvent) {
@@ -137,7 +136,7 @@
         <div
             class="z-50 absolute w-full h-full text-center font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
         >
-            {good.length}/{$questions.length} ({percentageText}%)
+            {good.length}/{base.length} ({percentageText}%)
         </div>
 
         <div class="absolute h-full top-0 bg-lime-600 rounded-lg bar" />

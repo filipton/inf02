@@ -6,21 +6,21 @@
     import { browser } from "$app/environment";
     import { shuffleArray, msToTime } from "$lib/utils";
 
-    let questionPool: Question[] = [];
+    let questionPool: Question[];
     let shownQuestions: Question[] = [];
     let percentage = 0;
     let startedAt = -1;
     let ended = false;
 
     questions.subscribe(async (x) => {
-        if (!browser) return;
+        if (!browser || questionPool) return;
 
         questionPool = JSON.parse(JSON.stringify(x));
         await getQuestionsSet();
     });
 
     async function getQuestionsSet() {
-        if (questionPool.length < 40) {
+        if (!questionPool || questionPool.length < 40) {
             questionPool = JSON.parse(JSON.stringify($questions));
         }
 

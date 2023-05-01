@@ -1,5 +1,19 @@
 <script lang="ts">
-    import WholeBaseQuestions from "$lib/components/WholeBaseQuestions.svelte";
+    import WholeBaseTest from "$lib/components/WholeBaseTest.svelte";
+    import type { Question } from "$lib/types";
+    import { questions } from "$lib/stores";
+
+    let base: Question[];
+    questions.subscribe((x) => {
+        if (base || !x) return;
+        base = x;
+    });
 </script>
 
-<WholeBaseQuestions />
+{#if base && base.length > 0}
+    <WholeBaseTest key="q" {base} />
+{:else}
+    <div class="flex flex-col items-center justify-center h-full mt-4">
+        <h1 class="text-2xl font-bold">Brak pytań w bazie!</h1>
+    </div>
+{/if}
