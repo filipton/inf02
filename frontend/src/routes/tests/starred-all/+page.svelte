@@ -1,1 +1,6 @@
-<h1 class="text-2xl font-bold text-center w-full text-white">Jeszcze nie zrobione!</h1>
+<script>
+    import WholeStarredQuestions from "$lib/components/WholeStarredQuestions.svelte";
+
+</script>
+
+<WholeStarredQuestions />

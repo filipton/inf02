@@ -17,6 +17,8 @@
     });
 
     async function getNextQuestion() {
+        if ($starred.length == 0) return;
+
         selected = false;
         if (questionsPool.length == 0) {
             questionsPool = JSON.parse(
@@ -73,17 +75,23 @@
 <svelte:window on:keydown={onKeyDown} />
 
 <QuestionsHandler>
-    <button
-        class="block w-full bg-gray-900 text-white py-2 px-4 rounded mb-8 hover:bg-gray-800"
-        on:click={getNextQuestion}
-    >
-        Nastepne pytanie
-    </button>
+    {#if shownQuestion}
+        <button
+            class="block w-full bg-gray-900 text-white py-2 px-4 rounded mb-8 hover:bg-gray-800"
+            on:click={getNextQuestion}
+        >
+            Nastepne pytanie
+        </button>
 
-    <QuestionElement
-        question={shownQuestion}
-        questionNumber={shownQuestion ? shownQuestion.id + 1 : -1}
-        ended={selected}
-        on:click={() => (selected = true)}
-    />
+        <QuestionElement
+            question={shownQuestion}
+            questionNumber={shownQuestion ? shownQuestion.id + 1 : -1}
+            ended={selected}
+            on:click={() => (selected = true)}
+        />
+    {:else}
+        <div class="text-center">
+            <h1 class="text-2xl font-bold mb-4">Brak pytań z gwiazdka</h1>
+        </div>
+    {/if}
 </QuestionsHandler>

@@ -70,14 +70,12 @@
     }
 </script>
 
-{#if shownQuestions.length < 40}
-    <span
-        class="block w-full text-white py-2 px-4 my-4 rounded center text-center"
-    >
-        Nie masz tylu pytan z gwiazdka!
-    </span>
-{:else}
-    <QuestionsHandler>
+<QuestionsHandler>
+    {#if shownQuestions.length < 40}
+        <div class="text-center">
+            <h1 class="text-2xl font-bold mb-4">Brak pytań z gwiazdka (min 40)</h1>
+        </div>
+    {:else}
         {#if ended}
             <span
                 class="block w-full text-white py-2 px-4 my-4 rounded center text-center {percentageColor()}"
@@ -99,5 +97,5 @@
         >
             {ended ? "Nastepny test" : "Zakoncz test"}
         </button>
-    </QuestionsHandler>
-{/if}
+    {/if}
+</QuestionsHandler>
