@@ -3,7 +3,7 @@ use crate::utils::{
     get_element_string,
 };
 use anyhow::Result;
-use html_parser::Element;
+use html_parser::{Element, Node};
 use reqwest::Client;
 use std::{collections::HashMap, ops::RangeInclusive, path::PathBuf};
 
@@ -14,6 +14,18 @@ pub struct QuestionsContainer {
     pub questions: Vec<Question>,
     pub client: Client,
     pub image_dir: PathBuf,
+}
+
+#[derive(Debug, serde::Serialize, serde::Deserialize, Clone)]
+pub struct Question {
+    pub id: i32,
+    pub text: String,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub image: Option<String>,
+
+    pub anwsers: Vec<String>,
+    pub correct: i8,
 }
 
 impl QuestionsContainer {
@@ -100,6 +112,99 @@ impl QuestionsContainer {
     }
 
     async fn scrape_40(&mut self, body: HashMap<String, String>) -> Result<()> {
+        let mut tmp_question: Question = Question {
+            id: self.questions.len() as i32,
+            text: String::new(),
+            image: None,
+            anwsers: Vec::new(),
+            correct: -1,
+        };
+
+        let mut tmp_inside = false;
+        for child in self.get_raw_questions(body).await? {
+            let elem = child.element().unwrap();
+            let classes = &elem.classes;
+
+            if classes == &vec!["trescE"] {
+                tmp_inside = true;
+                tmp_question = Question {
+                    id: self.questions.len() as i32,
+                    text: String::from(get_element_string(&elem, false)),
+                    image: None,
+                    anwsers: Vec::new(),
+                    correct: -1,
+                };
+            }
+
+            if tmp_inside {
+                if classes == &vec!["obrazek"] {
+                    tmp_question.image = self.process_image(&elem).await?;
+                } else if classes.len() == 1 && classes[0].starts_with("odp") {
+                    tmp_inside = self.process_anwser(&elem, classes, &mut tmp_question)?;
+                } else if classes == &vec!["sep"] {
+                    self.add_question(&tmp_question)?;
+                    tmp_inside = false;
+                }
+            }
+        }
+
+        Ok(())
+    }
+
+    fn process_anwser(
+        &mut self,
+        elem: &Element,
+        classes: &Vec<String>,
+        tmp_question: &mut Question,
+    ) -> Result<bool> {
+        let anwser_text = elem
+            .children
+            .iter()
+            .find_map(|t| t.text())
+            .unwrap()
+            .to_owned();
+
+        tmp_question.anwsers.push(anwser_text);
+        if classes[0].ends_with("good") {
+            tmp_question.correct = tmp_question.anwsers.len() as i8;
+        }
+
+        if tmp_question.anwsers.len() == 4 {
+            self.add_question(&tmp_question)?;
+            return Ok(false);
+        }
+
+        Ok(true)
+    }
+
+    async fn process_image(&mut self, elem: &Element) -> Result<Option<String>> {
+        let image = elem
+            .children
+            .iter()
+            .find_map(|img| img.element())
+            .unwrap()
+            .attributes
+            .get("src")
+            .unwrap()
+            .to_owned()
+            .unwrap();
+
+        let image_bytes = self
+            .client
+            .get(format!("{}{}", BASE_URL, &image.trim_start_matches("..")))
+            .send()
+            .await?
+            .bytes()
+            .await?;
+
+        let image_name = format!("{}.png", self.questions.len());
+        let image_path = self.image_dir.join(&image_name);
+        std::fs::write(image_path, image_bytes)?;
+
+        Ok(Some(image_name))
+    }
+
+    async fn get_raw_questions(&mut self, body: HashMap<String, String>) -> Result<Vec<Node>> {
         let res = self
             .client
             .post(format!(
@@ -129,96 +234,6 @@ impl QuestionsContainer {
         let div = find_by_name_class_wo_style(&div, "div", vec!["row"]);
         let div = find_by_name_class(&div, "div", vec!["col-md-9"]);
 
-        let mut tmp_question: Question = Question {
-            id: self.questions.len() as i32,
-            text: String::new(),
-            image: None,
-            anwsers: Vec::new(),
-            correct: -1,
-        };
-
-        let mut tmp_inside = false;
-        for child in div.children {
-            let elem = child.element().unwrap();
-            let classes = &elem.classes;
-
-            if classes == &vec!["trescE"] {
-                tmp_inside = true;
-                tmp_question = Question {
-                    id: self.questions.len() as i32,
-                    text: String::from(get_element_string(&elem, false)),
-                    image: None,
-                    anwsers: Vec::new(),
-                    correct: -1,
-                };
-            }
-
-            if tmp_inside {
-                if classes == &vec!["obrazek"] {
-                    tmp_question.image = self.process_image(&elem).await?;
-                } else if classes.len() == 1 && classes[0].starts_with("odp") {
-                    let anwser_text = elem
-                        .children
-                        .iter()
-                        .find_map(|t| t.text())
-                        .unwrap()
-                        .to_owned();
-
-                    tmp_question.anwsers.push(anwser_text);
-                    if classes[0].ends_with("good") {
-                        tmp_question.correct = tmp_question.anwsers.len() as i8;
-                    }
-
-                    if tmp_question.anwsers.len() == 4 {
-                        tmp_inside = false;
-                        self.add_question(&tmp_question).await?;
-                    }
-                } else if classes == &vec!["sep"] {
-                    tmp_inside = false;
-                    self.add_question(&tmp_question).await?;
-                }
-            }
-        }
-
-        Ok(())
+        Ok(div.children)
     }
-
-    async fn process_image(&mut self, elem: &Element) -> Result<Option<String>> {
-        let image = elem
-            .children
-            .iter()
-            .find_map(|img| img.element())
-            .unwrap()
-            .attributes
-            .get("src")
-            .unwrap()
-            .to_owned()
-            .unwrap();
-
-        let image_bytes = self
-            .client
-            .get(format!("{}{}", BASE_URL, &image.trim_start_matches("..")))
-            .send()
-            .await?
-            .bytes()
-            .await?;
-
-        let image_name = format!("{}.png", self.questions.len());
-        let image_path = self.image_dir.join(&image_name);
-        std::fs::write(image_path, image_bytes)?;
-
-        Ok(Some(image_name))
-    }
-}
-
-#[derive(Debug, serde::Serialize, serde::Deserialize, Clone)]
-pub struct Question {
-    pub id: i32,
-    pub text: String,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub image: Option<String>,
-
-    pub anwsers: Vec<String>,
-    pub correct: i8,
 }
