@@ -122,9 +122,9 @@ async fn pdf(mut container: QuestionsContainer, base_path: PathBuf) -> Result<()
                 let splitted = l.splitn(2, ". ").collect::<Vec<_>>();
 
                 if splitted.len() == 2 {
-                    splitted[1].trim()
+                    splitted[1].trim().trim_end_matches(".").replace("\n", " ")
                 } else {
-                    splitted[0].trim()
+                    splitted[0].trim().trim_end_matches(".").replace("\n", " ")
                 }
             })
             .collect::<Vec<_>>();
@@ -163,10 +163,7 @@ async fn pdf(mut container: QuestionsContainer, base_path: PathBuf) -> Result<()
             id: container.questions.len() as i32,
             text: question_text.to_string(),
             image,
-            anwsers: anwsers
-                .iter()
-                .map(|s| s.trim_end_matches(".").to_string())
-                .collect(),
+            anwsers: anwsers.iter().map(|s| s.to_string()).collect(),
             correct: correct.trim().parse()?,
         };
 

@@ -25503,7 +25503,7 @@
   },
   {
     "id": 2276,
-    "text": "Którym symbolem należy opatrzyć sprzęt komputerowy spełniający wymagania prawne umożliwiające jego \nsprzedaż w Unii Europejskiej? \nSymbol 1  Symbol 2  Symbol 3  Symbol 4",
+    "text": "Którym symbolem należy opatrzyć sprzęt komputerowy spełniający wymagania prawne umożliwiające jego sprzedaż w Unii Europejskiej?",
     "image": "2276.png",
     "anwsers": [
       "Symbolem 1",
@@ -25515,7 +25515,7 @@
   },
   {
     "id": 2277,
-    "text": "Zgodnie  ze  standardem  EIA/TIA  T568B  żyły  pary  odbiorczej  skrętki  pokryte  są  materiałem  izolacyjnym \nw kolorze",
+    "text": "Zgodnie  ze  standardem  EIA/TIA  T568B  żyły  pary  odbiorczej  skrętki  pokryte  są  materiałem  izolacyjnym w kolorze",
     "anwsers": [
       "zielonym i biało-zielonym",
       "brązowym i biało-brązowym",
@@ -25537,7 +25537,7 @@
   },
   {
     "id": 2279,
-    "text": "Którym urządzeniem sieciowym należy zastąpić koncentrator, aby podzielić sieć LAN na cztery oddzielne \ndomeny kolizji?",
+    "text": "Którym urządzeniem sieciowym należy zastąpić koncentrator, aby podzielić sieć LAN na cztery oddzielne domeny kolizji?",
     "anwsers": [
       "Ruterem",
       "Mostem",
@@ -25639,7 +25639,7 @@
   },
   {
     "id": 2288,
-    "text": "Wskaż najlepszą trasę sumaryczną dla podsieci IPv4: \n10.10.168.0/23 \n10.10.170.0/23 \n10.10.172.0/23 \n10.10.174.0/24",
+    "text": "Wskaż najlepszą trasę sumaryczną dla podsieci IPv4: 10.10.168.0/23 10.10.170.0/23 10.10.172.0/23 10.10.174.0/24",
     "anwsers": [
       "10.10.160.0/21",
       "10.10.168.0/16",
