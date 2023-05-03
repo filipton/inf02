@@ -25398,5 +25398,421 @@
       "HTTPS"
     ],
     "correct": 4
+  },
+  {
+    "id": 2267,
+    "text": "Wykonaj konwersję liczy dziesiętnej 129(10) na postać binarną.",
+    "anwsers": [
+      "1000001(2)",
+      "10000001(2)",
+      "100000001(2)",
+      "1000000001(2)"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2268,
+    "text": "Przedstawiony na rysunku symbol graficzny oznacza bramkę logiczną",
+    "image": "2268.png",
+    "anwsers": [
+      "OR",
+      "NOR",
+      "AND",
+      "NAND"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2269,
+    "text": "Sygnał  sterujący  wysyłany  przez  procesor,  umożliwiający  zapis  do  urządzeń  wejścia - wyjścia,  został  na schemacie oznaczony numerem",
+    "image": "2269.png",
+    "anwsers": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2270,
+    "text": "Który typ portu może być użyty do podłączenia dysku zewnętrznego do laptopa?",
+    "anwsers": [
+      "AGP",
+      "LPT",
+      "USB",
+      "DMA"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2271,
+    "text": "Który  z  wymienionych  interfejsów  należy  wybrać  do  podłączenia  dysku  SSD  do  płyty  głównej  komputera stacjonarnego, aby uzyskać największą prędkość zapisu i odczytu danych?",
+    "anwsers": [
+      "ATA",
+      "mSATA",
+      "PCI Express",
+      "SATA Express"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2272,
+    "text": "Jakie działanie powinien wykonać użytkownik, aby usunąć błąd oznaczony na rysunku ramką?",
+    "image": "2272.png",
+    "anwsers": [
+      "Podłączyć monitor do złącza HDMI",
+      "Zainstalować sterownik do karty graficznej",
+      "Usunąć kartę graficzną z Menadżera urządzeń",
+      "Zainstalować dodatek Service Pack systemu operacyjnego Service Pack 1"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2273,
+    "text": "Shareware to rodzaj licencji polegającej na",
+    "anwsers": [
+      "używaniu programu bezpłatnie, bez żadnych ograniczeń",
+      "bezpłatnym rozprowadzaniu aplikacji bez ujawniania kodu źródłowego",
+      "bezpłatnym rozpowszechnianiu programu na czas testów przed zakupem",
+      "nieograniczonym korzystaniu z programu tylko na jednym urządzeniu"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2274,
+    "text": "Flaga ACK wysyłana w ramach protokołu TCP jest wykorzystywana do",
+    "anwsers": [
+      "oznaczenia wskaźnika ważności pola",
+      "realizacji żądania zakończenia sesji",
+      "potwierdzenia otrzymania danych",
+      "resetowania połączenia"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2275,
+    "text": "Za pomocą testów statycznych okablowania można zdiagnozować",
+    "anwsers": [
+      "przerwy w obwodzie",
+      "zjawisko tłumienia",
+      "różnicę opóźnień",
+      "straty odbiciowe"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2276,
+    "text": "Którym symbolem należy opatrzyć sprzęt komputerowy spełniający wymagania prawne umożliwiające jego \nsprzedaż w Unii Europejskiej? \nSymbol 1  Symbol 2  Symbol 3  Symbol 4",
+    "image": "2276.png",
+    "anwsers": [
+      "Symbolem 1",
+      "Symbolem 2",
+      "Symbolem 3",
+      "Symbolem 4"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2277,
+    "text": "Zgodnie  ze  standardem  EIA/TIA  T568B  żyły  pary  odbiorczej  skrętki  pokryte  są  materiałem  izolacyjnym \nw kolorze",
+    "anwsers": [
+      "zielonym i biało-zielonym",
+      "brązowym i biało-brązowym",
+      "niebieskim i niebiesko-białym",
+      "pomarańczowym i pomarańczowo-białym"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2278,
+    "text": "ARP (Address Resolution Protocol) jest protokołem umożliwiającym translację",
+    "anwsers": [
+      "adresów IP na 48-bitowe adresy fizyczne",
+      "nazw domenowych na 32-bitowe adresy IP",
+      "adresów fizycznych na 32-bitowe adresy IP",
+      "nazw domenowych na 48-bitowe adresy fizyczne"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2279,
+    "text": "Którym urządzeniem sieciowym należy zastąpić koncentrator, aby podzielić sieć LAN na cztery oddzielne \ndomeny kolizji?",
+    "anwsers": [
+      "Ruterem",
+      "Mostem",
+      "Przełącznikiem",
+      "Regeneratorem"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2280,
+    "text": "Urządzenie przedstawione na rysunku jest stosowane w celu",
+    "image": "2280.png",
+    "anwsers": [
+      "regeneracji sygnału",
+      "rozdziału domen kolizji",
+      "monitorowania ruchu na porcie LAN",
+      "dostarczenia zasilania po kablu U/UTP"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2281,
+    "text": "Do jakiego rodzaju kabli należy zastosować narzędzie przedstawione na zdjęciu?",
+    "image": "2281.png",
+    "anwsers": [
+      "Kabli U/UTP",
+      "Kabli koncentrycznych",
+      "Światłowodowych jednomodowych",
+      "Światłowodowych wielomodowych"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2282,
+    "text": "Przedstawiony na rysunku wtyk należy zastosować do zakańczania kabli kategorii",
+    "image": "2282.png",
+    "anwsers": [
+      "3",
+      "5",
+      "5a",
+      "6"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2283,
+    "text": "Którym akronimem jest oznaczony przenik zbliżny skrętki teleinformatycznej?",
+    "anwsers": [
+      "FEXT",
+      "NEXT",
+      "AFEXT",
+      "ANEXT"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2284,
+    "text": "Do sprawdzenia mapy połączeń kabla U/UTP Cat. 5e w okablowaniu strukturalnym należy użyć",
+    "anwsers": [
+      "woltomierza",
+      "testera okablowania",
+      "reflektometru optycznego OTDR",
+      "analizatora protokołów sieciowych"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2285,
+    "text": "Wskaż adres rozgłoszeniowy dla podsieci 86.10.20.64/26",
+    "anwsers": [
+      "86.10.20.63",
+      "86.10.20.64",
+      "86.10.20.127",
+      "86.10.20.128"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2286,
+    "text": "Wskaż prefiks identyfikujący adresy typu globalnego w protokole IPv6",
+    "anwsers": [
+      "2::/3",
+      "20::/3",
+      "200::/3",
+      "2000::/3"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2287,
+    "text": "Sieć o adresie IP 192.168.2.0/24 podzielono na 8 podsieci. Wskaż maskę dla nowych podsieci?",
+    "anwsers": [
+      "255.255.255.128",
+      "255.255.255.192",
+      "255.255.255.224",
+      "255.255.255.240"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2288,
+    "text": "Wskaż najlepszą trasę sumaryczną dla podsieci IPv4: \n10.10.168.0/23 \n10.10.170.0/23 \n10.10.172.0/23 \n10.10.174.0/24",
+    "anwsers": [
+      "10.10.160.0/21",
+      "10.10.168.0/16",
+      "10.10.168.0/21",
+      "10.10.168.0/22"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2289,
+    "text": "Którego parametru polecenia ping należy użyć, by uzyskać efekt przedstawiony na zrzucie ekranu",
+    "image": "2289.png",
+    "anwsers": [
+      "–l 1000",
+      "–i 1000",
+      "–f 1000",
+      "–n 1000"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2290,
+    "text": "Który protokół należy skonfigurować w przełączniku sieciowym, aby zapobiec zjawisku broadcast storm?",
+    "anwsers": [
+      "VTP",
+      "GVRP",
+      "RSTP",
+      "MDIX"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2291,
+    "text": "Który  protokół  rutingu  dynamicznego  został  zaprojektowany  jako  protokół  bramy  zewnętrznej  służący  do łączenia ze sobą różnych dostawców usług internetowych?",
+    "anwsers": [
+      "BGP",
+      "RIPng",
+      "IS - IS",
+      "EIGRP"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2292,
+    "text": "Która trasa jest oznaczona literą R w tablicy rutingu?",
+    "anwsers": [
+      "Trasa statyczna",
+      "Trasa otrzymana przez protokół RIP",
+      "Trasa otrzymana przez protokół OSPF",
+      "Sieć bezpośrednio przyłączona do rutera"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2293,
+    "text": "Które peryferyjne urządzenie komputerowe jest stosowane do wycinania, drukowania i frezowania?",
+    "anwsers": [
+      "Ploter",
+      "Skaner",
+      "Drukarka",
+      "Wizualizer"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2294,
+    "text": "W jakim celu należy uaktywnić w przełączniku funkcję RMON (Remote Network Monitoring)?",
+    "anwsers": [
+      "Ograniczania rozsyłania transmisji rozgłoszeniowych",
+      "Automatycznego uczenia się i przydzielania VLAN’ów",
+      "Automatycznego wykrywania rodzaju podłączonego do portu kabla",
+      "Obsługi zaawansowanych standardów monitorowania i raportowania"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2295,
+    "text": "Którym akronimem jest oznaczony program do sporządzania graficznych wykresów ruchu, który odbywa się na interfejsach urządzeń sieciowych?",
+    "anwsers": [
+      "CDP",
+      "ICMP",
+      "SMTP",
+      "MRTG"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2296,
+    "text": "Przełącznikowi warstwy drugiej adres IP jest nadawany w celu",
+    "anwsers": [
+      "uzyskania zdalnego dostępu",
+      "ograniczania pasma na portach",
+      "konfiguracji domeny rozgłoszeniowej",
+      "skonfigurowania portu bezpieczeństwa"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2297,
+    "text": "Sieć VLAN można skonfigurować na",
+    "anwsers": [
+      "moście",
+      "przełączniku",
+      "regeneratorze",
+      "koncentratorze"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2298,
+    "text": "Którą usługę należy uruchomić na ruterze, aby każda stacja robocza  miała możliwość wymiany pakietów z siecią Internet w przypadku gdy do dyspozycji jest 5 adresów publicznych i aż 18 stacji roboczych?",
+    "anwsers": [
+      "WWW",
+      "FTP",
+      "VPN",
+      "NAT"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2299,
+    "text": "Który rodzaj kopii bezpieczeństwa należy zastosować w celu archiwizacji wszystkich danych, niezależnie od czasu kiedy były archiwizowane po raz ostatni?",
+    "anwsers": [
+      "Pełną",
+      "Różnicową",
+      "Przyrostową",
+      "Porównującą"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2300,
+    "text": "Które  oprogramowanie  można  zastosować  w  celu  poszukiwania  błędów  w  układach  pamięci  operacyjnej RAM?",
+    "anwsers": [
+      "Chkdsk",
+      "SpeedFan",
+      "HWMonitor",
+      "MemTest86"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2301,
+    "text": "Który z adresów protokołu IPv4 może być  użyty do konfiguracji interfejsu serwera DNS zarejestrowanego w domenach regionalnych?",
+    "anwsers": [
+      "111.16.10.1",
+      "172.16.7.126",
+      "192.168.15.165",
+      "240.100.255.254"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2302,
+    "text": "Wynik którego polecenia systemu Windows przedstawiony jest na rysunku?",
+    "image": "2302.png",
+    "anwsers": [
+      "route",
+      "getmac",
+      "netsatat",
+      "net view"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2303,
+    "text": "Który rekord bazy DNS (Domain Name System) pozwala na zdefiniowanie aliasu rekordu A?",
+    "anwsers": [
+      "NS",
+      "PTR",
+      "AAAA",
+      "CNAME"
+    ],
+    "correct": 4
   }
 ]

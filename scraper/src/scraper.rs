@@ -58,11 +58,15 @@ impl QuestionsContainer {
     }
 
     pub fn add_question(&mut self, question: &Question) -> Result<()> {
-        if self
-            .questions
-            .iter()
-            .any(|q| q.text == question.text && q.anwsers == question.anwsers)
-        {
+        let mut q1 = question.clone();
+        q1.anwsers.sort();
+
+        if self.questions.iter().any(|q| {
+            let mut q2 = q.clone();
+            q2.anwsers.sort();
+
+            return q.text == question.text && q.anwsers == question.anwsers;
+        }) {
             println!("[Duplication protection] Question already exists");
             if question.image.is_some() {
                 std::fs::remove_file(self.image_dir.join(&question.image.as_ref().unwrap()))?;
