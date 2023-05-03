@@ -127,14 +127,13 @@ async fn adder() -> Result<()> {
             };
 
             base_questions.push(question);
+
+            let base_json = serde_json::to_string_pretty(&base_questions)?;
+            std::fs::write(&path, base_json)?;
         } else {
             break;
         }
     }
-
-    println!("Saving...");
-    let base_json = serde_json::to_string_pretty(&base_questions)?;
-    std::fs::write(path, base_json)?;
 
     Ok(())
 }

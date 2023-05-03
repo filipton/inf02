@@ -24956,5 +24956,447 @@
       "farad (F)"
     ],
     "correct": 4
+  },
+  {
+    "id": 2228,
+    "text": "Biernym elementem elektronicznym jest",
+    "anwsers": [
+      "dioda",
+      "tranzystor",
+      "kondensator",
+      "stabilizator napięcia"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2229,
+    "text": "Element elektroniczny oznaczony na schemacie czerwonym kółkiem to",
+    "image": "2229.png",
+    "anwsers": [
+      "cewka",
+      "fotodioda",
+      "dioda prostownicza",
+      "kondensator elektrolityczny"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2230,
+    "text": "Ze schematu umieszczonego w dokumentacji płyty głównej wynika, że jest ona wyposażona",
+    "image": "2230.png",
+    "anwsers": [
+      "w gniazdo procesora LGA 1151",
+      "w 1 port HDMI oraz 1 port DP",
+      "w 4 porty pamięci DDR4",
+      "w 6 portów SATA"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2231,
+    "text": "Podzespołem kompatybilnym z przedstawionym kontrolerem jest",
+    "image": "2231.png",
+    "anwsers": [
+      "monitor Dell, 27”, 1x DP, 4x USB 3.1, HDMI",
+      "pamięć RAM HyperX, DDR3 8GB, 1600MHz, CL10",
+      "dysk twardy DELL SAS 3TB 7.2K 6G 3.5IN SAS HDD",
+      "karta graficzna NVIDIA 6GB, GDDR5, 192 bit, PCI-Ex16 3.0"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2232,
+    "text": "Wskaż złącze, którego należy użyć w celu poprawnego podłączenia monitora do jednostki centralnej, wyposażonej w wymagane przez monitor porty.",
+    "image": "2232.png",
+    "anwsers": [
+      "Złącze 1",
+      "Złącze 2",
+      "Złącze 3",
+      "Złącze 4"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2233,
+    "text": "Które narzędzia są stosowane w środowisku graficznym systemów Linux do instalacji oprogramowania?",
+    "anwsers": [
+      "dxdiag oraz yum",
+      "YaST oraz Synaptic",
+      "perfmon oraz zypper",
+      "Dolphin oraz Aptitude"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2234,
+    "text": "Aby podczas pracy użytkownika system Windows nie restartował się w związku z instalacją pobranych aktualizacji, należy w Windows Update skonfigurować",
+    "anwsers": [
+      "historię aktualizacji",
+      "kontrolę rodzicielską",
+      "godziny aktywnego użytkowania",
+      "kompilację systemu operacyjnego"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2235,
+    "text": "Po zainstalowaniu systemu Linux Ubuntu obok systemu Windows, aby skonfigurować czas wyświetlania menu wyboru systemów, można zmodyfikować plik",
+    "anwsers": [
+      "/etc/network/interfaces",
+      "/etc/default/grub",
+      "/var/log/syslog",
+      "/etc/boot.ini"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2236,
+    "text": "Licencja na oprogramowanie systemu bankowości, przeznaczona tylko dla jednego z działających w Polsce banków, powiązana z umową podpisaną z firmą wykonującą oprogramowanie, to licencja",
+    "anwsers": [
+      "subskrypcyjna",
+      "niewyłączna",
+      "dostępowa",
+      "wyłączna"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2237,
+    "text": "Topologia logiczna, której mechanizm działania jest pokazany na przedstawionym schemacie blokowym, to topologia",
+    "image": "2237.png",
+    "anwsers": [
+      "pierścienia",
+      "rozgłaszania",
+      "gwiazdy rozszerzonej",
+      "przekazywania tokenu"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2238,
+    "text": "Którym skrótem na schemacie logicznym sieci jest oznaczany element okablowania strukturalnego określany jako punkt, w którym są zakończone budynkowe kable szkieletowe?",
+    "anwsers": [
+      "MDF",
+      "IDF",
+      "CD",
+      "TO"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2239,
+    "text": "Przedstawione narzędzie jest stosowane do",
+    "image": "2239.png",
+    "anwsers": [
+      "zaciskania złączy BNC",
+      "cięcia włókien światłowodowych",
+      "zdejmowania izolacji okablowania S/FTP",
+      "spawania okablowania miedzianego różnych typów"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2240,
+    "text": "Jaka jest maksymalna liczba adresów hostów, które można wykorzystać w podsieci o adresie IPv4 172.16.0.0/22?",
+    "anwsers": [
+      "1022",
+      "1024",
+      "2046",
+      "2048"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2241,
+    "text": "Który zapis jest formą uproszczoną adresu IPv6: 2020:0dc8:0000:0001:0000:0000:0000:0001 ?",
+    "anwsers": [
+      "22:dc8:1:1",
+      "22:dc8::1::1",
+      "2020:0dc8::1",
+      "2020:dc8:0:1::1"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2242,
+    "text": "Ile bitów należy przejąć z części hosta, aby sieć o adresie IPv4 10.0.10.0/24 można było podzielić na 16 podsieci?",
+    "anwsers": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2243,
+    "text": "Z przedstawionego zrzutu wynika, że za pomocą przeglądarki internetowej wykonano pomiar",
+    "image": "2243.png",
+    "anwsers": [
+      "strat mocy optycznej",
+      "tłumienia kabla miedzianego",
+      "czasu odpowiedzi od wybranego serwera",
+      "liczby transmitowanych pakietów między wybranymi serwerami"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2244,
+    "text": "Urządzeniem sieciowym drugiej warstwy modelu OSI, łączącym segmenty sieci oraz dokonującym filtrowania ruchu sieciowego, w którym podłączone sieci mogą korzystać z różnych fizycznych i logicznych protokołów łącza, jest",
+    "anwsers": [
+      "bramka VoIP",
+      "most (bridge)",
+      "zapora sieciowa",
+      "wzmacniak (repeater)"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2245,
+    "text": "Aby w systemie Windows 10 wykonać przedstawioną konfigurację słuchawek w Panelu sterowania, należy użyć apletu",
+    "image": "2245.png",
+    "anwsers": [
+      "Ekran",
+      "Dźwięk",
+      "Menedżer urządzeń",
+      "Menedżer poświadczeń"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2246,
+    "text": "Żywica światłoutwardzalna to materiał eksploatacyjny drukarki",
+    "anwsers": [
+      "termotransferowej",
+      "stałoatramentowej",
+      "termicznej",
+      "3D"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2247,
+    "text": "Wskaż rodzaj komunikatu stosowanego w komunikacji między agentem SNMP a menedżerem SNMP, który pozwala agentowi na powiadomienie menedżera o ważnych zdarzeniach.",
+    "anwsers": [
+      "set",
+      "get",
+      "trap",
+      "walk"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2248,
+    "text": "Program systemu Linux, pozwalający na zebranie w czasie rzeczywistym informacji statystycznych na temat ruchu sieciowego, to",
+    "anwsers": [
+      "ps",
+      "ntop",
+      "wget",
+      "getmac"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2249,
+    "text": "Wpisanie polecenia <i><b>configure terminal</b></i> w przedstawionym interfejsie CLI rutera CISCO spowoduje",
+    "image": "2249.png",
+    "anwsers": [
+      "wyjście z trybu konfiguracji",
+      "uruchomienie trybu konfiguracji",
+      "ustawienie nazwy interfejsu rutera",
+      "określenie interfejsu wewnętrznego"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2250,
+    "text": "Do umocowania nowych radiatorów na układach pamięci karty graficznej, jeżeli stare i niesprawne zostały wymontowane, można użyć",
+    "anwsers": [
+      "smaru",
+      "filamentu",
+      "alkoholu izopropylowego",
+      "taśmy termoprzewodzącej"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2251,
+    "text": "Do organizacji przewodów wewnątrz jednostki centralnej można wykorzystać",
+    "anwsers": [
+      "śruby",
+      "zworki",
+      "opaski zaciskowe",
+      "podkładki metalowe"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2252,
+    "text": "Wskaż polecenie systemu Linux, które służy do wyodrębnienia plików z archiwum wazne_pliki.tar.bz2",
+    "anwsers": [
+      "tar –xvjf wazne_pliki.tar.bz2",
+      "tar –xvzf wazne_pliki.tar.bz2",
+      "tar –xvtf wazne_pliki.tar.bz2",
+      "tar –xvuf wazne_pliki.tar.bz2"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2253,
+    "text": "Wskaż narzędzie systemu Windows 10, które zastosowane wraz z historią plików umożliwia odzyskiwanie plików lub folderów osobistych użytkownika.",
+    "anwsers": [
+      "Kopia zapasowa",
+      "Menedżer zadań",
+      "Harmonogram zadań",
+      "Menedżer poświadczeń"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2254,
+    "text": "W komputerze z zainstalowanym systemem Windows 10 nie można uruchomić systemu. Uszkodzeniu uległ główny rekord rozruchowy (MBR). Naprawa usterki bez reinstalacji systemu jest możliwa przy zastosowaniu narzędzia",
+    "anwsers": [
+      "bootrec.exe",
+      "gpedit.msc",
+      "boot.ini",
+      "wf.msc"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2255,
+    "text": "Do sprawdzenia przedstawionej wydajności dysku twardego w systemie Linux należy użyć polecenia",
+    "image": "2255.png",
+    "anwsers": [
+      "hdparm –E /dev/sda",
+      "hdparm –T /dev/sda",
+      "hdparm –d0 /dev/sda",
+      "hdparm –d1 /dev/sda"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2256,
+    "text": "Przedstawiony program jest wykorzystywany do diagnostyki",
+    "image": "2256.png",
+    "anwsers": [
+      "pamięci RAM",
+      "płyt głównych",
+      "kart graficznych",
+      "dysków twardych"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2257,
+    "text": "Serwisant podczas naprawy sprzętu komputerowego wymienił kartę graficzną oraz zasilacz, zainstalował oraz skonfigurował drukarkę, skonfigurował program Outlook oraz wykonał kopię zapasową zdjęć prywatnych klienta na dysk USB. Wskaż koszt brutto wykonanych przez serwisanta usług.",
+    "image": "2257.png",
+    "anwsers": [
+      "140,00 zł",
+      "170,00 zł",
+      "204,40 zł",
+      "209,10 zł"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2258,
+    "text": "Użycie polecenia <i><b>sudo ifup eth0</b></i> do konfiguracji interfejsu sieciowego w systemie Linux spowoduje",
+    "anwsers": [
+      "wyświetlenie prędkości łącza sieciowego",
+      "wyświetlenie jego adresu IP",
+      "jego wyłączenie",
+      "jego włączenie"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2259,
+    "text": "Do edycji plików konfiguracyjnych w systemie Linux można użyć polecenia",
+    "anwsers": [
+      "vi",
+      "cat",
+      "pwd",
+      "mkdir"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2260,
+    "text": "W systemie Windows konfigurację opcji rozruchu systemu umożliwia polecenie",
+    "anwsers": [
+      "dxdiag",
+      "diskpart",
+      "charmap",
+      "msconfig"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2261,
+    "text": "Przedstawiony zapis jest umieszczony na końcu pliku smb.conf. W wyniku jego działania podczas konfiguracji usług zainstalowanych w systemie Linux jest",
+    "image": "2261.png",
+    "anwsers": [
+      "dodanie nowej drukarki sieciowej o nazwie UDZIAL",
+      "odebranie użytkownikowi root uprawnień do katalogu /home/udzial",
+      "utworzenie udostępnionego udziału dyskowego dla użytkownika root",
+      "konfiguracja przestrzeni nazw domenowych serwera DNS w katalogu path"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2262,
+    "text": "W systemie Linux do wyświetlenia wszystkich grup, do których należy użytkownik <b>egzamin</b> służy polecenie",
+    "anwsers": [
+      "cat egzamin",
+      "who egzamin",
+      "users egzamin",
+      "groups egzamin"
+    ],
+    "correct": 4
+  },
+  {
+    "id": 2263,
+    "text": "Zmianę hasła użytkownika <b>egzamin</b> w systemie Linux umożliwia polecenie",
+    "anwsers": [
+      "pwd egzamin",
+      "mkdir egzamin",
+      "passwd egzamin",
+      "shadow egzamin"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2264,
+    "text": "Poleceniem systemu Windows, które wymusza zmianę hasła po zalogowaniu użytkownika <b>test</b> jest",
+    "anwsers": [
+      "net user test /logonpasswordchg:yes",
+      "net user test /passwordreq:yes",
+      "net user test /passwordchg:no",
+      "net user test /passwordreq:no"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2265,
+    "text": "Atrybut SN występujący w pliku schematów core.schema w OpenLDAP oznacza",
+    "anwsers": [
+      "imię",
+      "państwo",
+      "nazwisko",
+      "organizację"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 2266,
+    "text": "Protokołem komunikacyjnym warstwy aplikacji wykorzystującym standardowo port 443 jest",
+    "anwsers": [
+      "DNS",
+      "DHCP",
+      "SMTP",
+      "HTTPS"
+    ],
+    "correct": 4
   }
 ]
