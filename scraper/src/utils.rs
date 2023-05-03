@@ -50,3 +50,28 @@ pub fn find_by_name_class_wo_style(elem: &Element, name: &str, classes: Vec<&str
         .unwrap()
         .to_owned()
 }
+
+pub fn get_element_string(elem: &html_parser::Element, deep: bool) -> String {
+    let t = elem
+        .children
+        .clone()
+        .into_iter()
+        .filter_map(|c| match c {
+            html_parser::Node::Text(t) => Some(t),
+            html_parser::Node::Element(e) => Some(format!(
+                " <{}>{}</{}> ",
+                e.name,
+                get_element_string(&e, true),
+                e.name
+            )),
+            html_parser::Node::Comment(_) => None,
+        })
+        .collect::<Vec<String>>()
+        .join("");
+
+    if deep {
+        return t;
+    }
+
+    return t.splitn(2, ". ").collect::<Vec<&str>>()[1].to_owned();
+}
