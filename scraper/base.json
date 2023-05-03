@@ -24945,5 +24945,16 @@
       "CE"
     ],
     "correct": 4
+  },
+  {
+    "id": 2227,
+    "text": "Jednostką pojemności elektrycznej jest",
+    "anwsers": [
+      "wolt (V)",
+      "wat (W)",
+      "henr (H)",
+      "farad (F)"
+    ],
+    "correct": 4
   }
 ]

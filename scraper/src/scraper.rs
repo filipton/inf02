@@ -143,7 +143,7 @@ fn get_element_string(elem: &html_parser::Element, deep: bool) -> String {
     return t.splitn(2, ". ").collect::<Vec<&str>>()[1].to_owned();
 }
 
-#[derive(Debug, serde::Serialize)]
+#[derive(Debug, serde::Serialize, serde::Deserialize)]
 pub struct Question {
     pub id: i32,
     pub text: String,
