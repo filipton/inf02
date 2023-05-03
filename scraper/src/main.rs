@@ -47,7 +47,7 @@ async fn adder(mut container: QuestionsContainer, base_path: PathBuf) -> Result<
             let image = if image.trim() == "" {
                 None
             } else {
-                container.download_image(image.trim().to_string()).await?
+                container.download_image(image.trim()).await?
             };
 
             let mut anwsers: Vec<String> = Vec::new();

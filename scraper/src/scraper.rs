@@ -189,17 +189,12 @@ impl QuestionsContainer {
             .to_owned()
             .unwrap();
 
-        self.download_image(image).await
+        self.download_image(&format!("{}{}", BASE_URL, &image.trim_start_matches("..")))
+            .await
     }
 
-    pub async fn download_image(&mut self, image: String) -> Result<Option<String>> {
-        let image_bytes = self
-            .client
-            .get(format!("{}{}", BASE_URL, &image.trim_start_matches("..")))
-            .send()
-            .await?
-            .bytes()
-            .await?;
+    pub async fn download_image(&mut self, image: &str) -> Result<Option<String>> {
+        let image_bytes = self.client.get(image).send().await?.bytes().await?;
 
         let image_name = format!("{}.png", self.questions.len());
         let image_path = self.image_dir.join(&image_name);
