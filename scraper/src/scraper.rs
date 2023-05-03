@@ -39,18 +39,18 @@ impl QuestionsContainer {
 
     /// Reads questions from json file
     /// If file does not exist it doesn't return error
-    pub fn read_from_file(path: PathBuf, image_dir: PathBuf) -> Result<Self> {
+    pub fn read_from_file(path: &PathBuf, image_dir: &PathBuf) -> Result<Self> {
         let json = std::fs::read_to_string(path).unwrap_or("[]".into());
         let questions: Vec<Question> = serde_json::from_str(&json)?;
 
         Ok(Self {
             questions,
             client: Client::new(),
-            image_dir,
+            image_dir: image_dir.clone(),
         })
     }
 
-    pub fn write_to_file(&self, path: PathBuf) -> Result<()> {
+    pub fn write_to_file(&self, path: &PathBuf) -> Result<()> {
         let json = serde_json::to_string_pretty(&self.questions)?;
         std::fs::write(path, json)?;
 
@@ -189,6 +189,10 @@ impl QuestionsContainer {
             .to_owned()
             .unwrap();
 
+        self.download_image(image).await
+    }
+
+    pub async fn download_image(&mut self, image: String) -> Result<Option<String>> {
         let image_bytes = self
             .client
             .get(format!("{}{}", BASE_URL, &image.trim_start_matches("..")))
