@@ -61,6 +61,14 @@
 
             if (tmpPool.length == 0) {
                 pool = pool.filter((q) => !good.includes(q.id));
+
+                // sort pool by wrong answers
+                pool.sort((a, b) => {
+                    let aWrong = wrong.findIndex((x) => x == a.id);
+                    let bWrong = wrong.findIndex((x) => x == b.id);
+
+                    return aWrong - bWrong;
+                });
             } else {
                 pool = tmpPool;
             }
