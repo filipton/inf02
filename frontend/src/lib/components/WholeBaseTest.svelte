@@ -56,11 +56,11 @@
             pool = JSON.parse(JSON.stringify(base));
 
             let tmpPool = pool.filter(
-                (_, i) => !wrong.includes(i) && !good.includes(i)
+                (q) => !wrong.includes(q.id) && !good.includes(q.id)
             );
 
             if (tmpPool.length == 0) {
-                pool = pool.filter((_, i) => !good.includes(i));
+                pool = pool.filter((q) => !good.includes(q.id));
             } else {
                 pool = tmpPool;
             }
