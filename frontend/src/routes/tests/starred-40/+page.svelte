@@ -20,6 +20,11 @@
     });
 
     async function getQuestionsSet() {
+        if (localStorage.getItem("s40State")) {
+            shownQuestions = JSON.parse(localStorage.getItem("s40State") || "");
+            return;
+        }
+
         if (!questionPool || questionPool.length < 40) {
             questionPool = JSON.parse(
                 JSON.stringify($questions.filter((q) => q.starred))
@@ -50,6 +55,7 @@
 
     async function bottomButton() {
         if (ended) {
+            localStorage.removeItem("s40State");
             await getQuestionsSet();
             ended = false;
             window.scrollTo({ top: 0 });
@@ -63,6 +69,10 @@
             shownQuestions.length;
 
         window.scrollTo({ top: 0 });
+    }
+
+    function saveState() {
+        localStorage.setItem("s40State", JSON.stringify(shownQuestions));
     }
 </script>
 
@@ -86,7 +96,12 @@
         {/if}
 
         {#each shownQuestions as question, i}
-            <QuestionElement {question} questionNumber={i + 1} {ended} />
+            <QuestionElement
+                {question}
+                questionNumber={i + 1}
+                {ended}
+                on:click={saveState}
+            />
         {/each}
 
         <button
