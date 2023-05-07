@@ -54,8 +54,8 @@
     }
 
     async function bottomButton() {
+        localStorage.removeItem("s40State");
         if (ended) {
-            localStorage.removeItem("s40State");
             await getQuestionsSet();
             ended = false;
             window.scrollTo({ top: 0 });
