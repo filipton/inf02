@@ -7,3 +7,8 @@ export type Question = {
     selected: number; // NOT IN JSON
     starred: boolean; // NOT IN JSON
 };
+
+export type SavedState = {
+    questions: Question[];
+    startedAt: number;
+}

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Question } from "$lib/types";
+    import type { Question, SavedState } from "$lib/types";
     import QuestionElement from "$lib/components/QuestionElement.svelte";
     import QuestionsHandler from "$lib/components/QuestionsHandler.svelte";
     import { questions } from "$lib/stores";
@@ -21,7 +21,12 @@
 
     async function getQuestionsSet() {
         if (localStorage.getItem("q40State")) {
-            shownQuestions = JSON.parse(localStorage.getItem("q40State") || "");
+            let state: SavedState = JSON.parse(
+                localStorage.getItem("q40State") || ""
+            );
+            shownQuestions = state.questions;
+            startedAt = state.startedAt;
+
             return;
         }
 
@@ -70,7 +75,11 @@
     }
 
     function saveState() {
-        localStorage.setItem("q40State", JSON.stringify(shownQuestions));
+        let state: SavedState = {
+            questions: shownQuestions,
+            startedAt,
+        };
+        localStorage.setItem("q40State", JSON.stringify(state));
     }
 </script>
 
