@@ -12,6 +12,9 @@
     let startedAt = -1;
     let ended = false;
 
+    let currentQuestionKB = -1;
+    let elements: HTMLElement[] = [];
+
     questions.subscribe(async (x) => {
         if (!browser || questionPool) return;
 
@@ -81,7 +84,36 @@
         };
         localStorage.setItem("q40State", JSON.stringify(state));
     }
+
+    function onKeyDown(e: KeyboardEvent) {
+        if (e.key === "Enter") {
+            currentQuestionKB++;
+            if (currentQuestionKB >= elements.length) {
+                bottomButton();
+                currentQuestionKB = -1;
+            }
+
+            elements[currentQuestionKB].scrollIntoView();
+        } else if (e.key == "Backspace") {
+            currentQuestionKB--;
+            if (currentQuestionKB < 0) {
+                currentQuestionKB = 0;
+            }
+
+            elements[currentQuestionKB].scrollIntoView();
+        } else if (e.key == "1") {
+            shownQuestions[currentQuestionKB].selected = 1;
+        } else if (e.key == "2") {
+            shownQuestions[currentQuestionKB].selected = 2;
+        } else if (e.key == "3") {
+            shownQuestions[currentQuestionKB].selected = 3;
+        } else if (e.key == "4") {
+            shownQuestions[currentQuestionKB].selected = 4;
+        }
+    }
 </script>
+
+<svelte:window on:keydown={onKeyDown} />
 
 <QuestionsHandler>
     {#if ended}
@@ -96,12 +128,14 @@
     {/if}
 
     {#each shownQuestions as question, i}
-        <QuestionElement
-            {question}
-            questionNumber={i + 1}
-            {ended}
-            on:click={saveState}
-        />
+        <div bind:this={elements[i]}>
+            <QuestionElement
+                {question}
+                questionNumber={i + 1}
+                {ended}
+                on:click={saveState}
+            />
+        </div>
     {/each}
 
     <button
