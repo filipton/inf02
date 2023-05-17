@@ -23941,7 +23941,7 @@
     "id": 2137,
     "text": "System Linux Ubuntu zainstalowano na dysku obok systemu Windows. Aby skonfigurować kolejność uruchamianych systemów operacyjnych, należy zmodyfikować zawartość",
     "anwsers": [
-      "/etc/grud",
+      "/etc/grub",
       "/etc/inittab",
       "boot.ini",
       "bcdedit"
@@ -24028,7 +24028,7 @@
   },
   {
     "id": 2145,
-    "text": "Narzędziem usług katalogowych w systemach z rodziny Windows Server, służącym do przekserowania komputerów do jednostki organizacyjnej określonej przez administratora, jest polecenie",
+    "text": "Narzędziem usług katalogowych w systemach z rodziny Windows Server, służącym do przekierowania komputerów do jednostki organizacyjnej określonej przez administratora, jest polecenie",
     "anwsers": [
       "dsrm",
       "dcdiag",
