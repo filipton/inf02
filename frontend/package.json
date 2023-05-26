@@ -30,7 +30,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@types/marked": "^5.0.0",
 		"@vitejs/plugin-basic-ssl": "^1.0.1",
+		"marked": "^5.0.3",
 		"showdown": "^2.1.0"
 	}
 }

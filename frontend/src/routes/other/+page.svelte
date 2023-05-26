@@ -1,21 +1,5 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-    import { Converter } from "showdown";
-
-    let htmlMarkdown = "";
-
-    onMount(() => {
-        let input =
-            "| First Header  | Second Header |\n" +
-            "| ------------- | ------------- |\n" +
-            "| Content Cell  | Content Cell  |\n" +
-            "| Content Cell  | Content Cell  |\n - [ ] test\n - [x] test\n";
-
-        var converter = new Converter();
-        converter.setOption("tables", true);
-        converter.setOption("tasklists", true);
-        htmlMarkdown = converter.makeHtml(input);
-    });
+    import MarkdownEditor from "$lib/components/Markdown/MarkdownEditor.svelte";
 </script>
 
 <div class="mt-6 w-full max-w-2xl mx-auto text-white text-center px-2">
@@ -63,4 +47,4 @@
     </div>
 </div>
 
-<article class="prose prose-invert">{@html htmlMarkdown}</article>
+<MarkdownEditor />
