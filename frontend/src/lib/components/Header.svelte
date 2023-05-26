@@ -43,7 +43,7 @@
 >
     <div class="flex justify-between">
         <div class="flex">
-            <a href="/tests" class="text-white p-2">TESTY</a>
+            <a href="/other" class="text-white p-2">INNE</a>
         </div>
         <div class="flex">
             <a href="/" class="text-white font-bold text-center w-full p-2"
