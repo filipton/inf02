@@ -15,7 +15,7 @@
 
 <article class="markdown-body">
     {@html marked(input, { mangle: false }).replaceAll(
-        "http://base.url",
+        "http://base.url/",
         "?v="
     )}
 </article>

@@ -4,7 +4,7 @@ import { build, files, version } from '$service-worker';
 const worker = (self as unknown) as ServiceWorkerGlobalScope;
 const FILES = `cache${version}`;
 
-const offlineStatic = ['/', '/tests', '/base', '/tests/1', '/tests/40'];
+const offlineStatic = ['/', '/tests', '/tests/1', '/tests/40', '/other', '/other/base', '/other/docs'];
 const to_cache = build.concat(files);
 const staticAssets = new Set(to_cache);
 

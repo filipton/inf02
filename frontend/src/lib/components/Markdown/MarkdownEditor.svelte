@@ -5,7 +5,7 @@
     let input = "";
 </script>
 
-<div class="w-full h-full bg-black">
+<div class="w-full h-full">
     <nav class="flex justify-center">
         <button
             class="hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-l {showPreview
@@ -26,7 +26,9 @@
     </nav>
 
     {#if showPreview}
-        <Markdown {input} />
+        <div class="max-w-2xl mx-auto">
+            <Markdown {input} />
+        </div>
     {:else}
         <textarea
             class="w-full h-full bg-transparent text-white resize-none outline-none"
