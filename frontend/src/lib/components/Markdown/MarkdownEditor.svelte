@@ -1,23 +1,36 @@
 <script lang="ts">
     import Markdown from "./Markdown.svelte";
 
+    let showPreview = false;
     let input = "";
 </script>
 
-<div class="absolute top-0 left-0 z-10">
-    <div class="flex flex-row w-screen h-screen bg-black">
-        <div
-            class="w-full h-full bg-transparent border-solid border-r-white border-r"
+<div class="w-full h-full bg-black">
+    <nav class="flex justify-center">
+        <button
+            class="hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-l {showPreview
+                ? 'bg-gray-900'
+                : 'bg-gray-800'}"
+            on:click={() => (showPreview = false)}
         >
-            <textarea
-                class="w-full h-full bg-transparent text-white"
-                bind:value={input}
-            />
-        </div>
-        <div
-            class="w-full h-full bg-transparent border-solid border-l-white border-l"
+            Edit
+        </button>
+        <button
+            class="hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-r {showPreview
+                ? 'bg-gray-800'
+                : 'bg-gray-900'}"
+            on:click={() => (showPreview = true)}
         >
-            <Markdown {input} />
-        </div>
-    </div>
+            Preview
+        </button>
+    </nav>
+
+    {#if showPreview}
+        <Markdown {input} />
+    {:else}
+        <textarea
+            class="w-full h-full bg-transparent text-white resize-none outline-none"
+            bind:value={input}
+        />
+    {/if}
 </div>

@@ -1,7 +1,3 @@
-<script lang="ts">
-    import MarkdownEditor from "$lib/components/Markdown/MarkdownEditor.svelte";
-</script>
-
 <div class="mt-6 w-full max-w-2xl mx-auto text-white text-center px-2">
     <div class="mb-6">
         <h1 class="text-2xl font-bold">Normalne</h1>
@@ -46,5 +42,3 @@
         </a>
     </div>
 </div>
-
-<MarkdownEditor />

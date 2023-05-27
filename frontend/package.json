@@ -33,6 +33,7 @@
 		"@types/marked": "^5.0.0",
 		"@vitejs/plugin-basic-ssl": "^1.0.1",
 		"marked": "^5.0.3",
-		"showdown": "^2.1.0"
+		"marked-base-url": "^1.0.1",
+		"marked-gfm-heading-id": "^3.0.3"
 	}
 }

@@ -23,6 +23,7 @@
     });
 
     function calcCurrent(clicked: HTMLElement) {
+        if (clicked == null) return;
         let clickedWidth = clicked.offsetWidth + 4;
         let clickedLeft = clicked.offsetLeft - current.offsetLeft - 8 - 2;
 
