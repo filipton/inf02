@@ -34,6 +34,6 @@
     }
 </script>
 
-<div class="h-full max-w-2xl mx-auto mt-4">
+<div class="h-full max-w-2xl mx-auto mt-4 px-2">
     <Markdown input={shownMarkdown} />
 </div>
