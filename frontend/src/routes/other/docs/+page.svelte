@@ -1,22 +1,33 @@
 <script lang="ts">
-    import { browser } from "$app/environment";
-    import { goto } from "$app/navigation";
     import { page } from "$app/stores";
     import MarkdownEditor from "$lib/components/Markdown/MarkdownEditor.svelte";
+    import Markdown from "$lib/components/Markdown/Markdown.svelte";
+    import { docs } from "$lib/stores";
 
-    $: file = $page.url.searchParams.get("v") ?? "/";
+    let editMode: boolean = false;
+
+    let file = "";
+    let shownMarkdown: string = "";
+
     $: {
-        if (browser) {
-            if ($page.url.searchParams.get("v") !== file) {
-                $page.url.searchParams.set("v", file);
-                goto(
-                    `?${decodeURIComponent($page.url.searchParams.toString())}`
-                );
+        file = $page.url.searchParams.get("v") ?? "";
+        docs.subscribe((d) => {
+            if (d) {
+                const entry = d.find((e) => e.url === file);
+                if (entry) {
+                    shownMarkdown = entry.markdown;
+                } else {
+                    shownMarkdown = `# Docs not found: ${file}`;
+                }
             }
-        }
+        });
     }
 </script>
 
-<div class="h-screen max-w-2xl mx-auto">
-    <MarkdownEditor />
+<div class="h-screen max-w-2xl mx-auto mt-4">
+    {#if editMode}
+        <MarkdownEditor />
+    {:else}
+        <Markdown input={shownMarkdown} />
+    {/if}
 </div>

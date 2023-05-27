@@ -12,3 +12,8 @@ export type SavedState = {
     questions: Question[];
     startedAt: number;
 }
+
+export type DocsEntry = {
+    url: string;
+    markdown: string;
+};
