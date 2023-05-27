@@ -44,15 +44,16 @@
 >
     <div class="flex justify-between">
         <div class="flex">
-            <a href="/other" class="text-white p-2">INNE</a>
+            <a href="/tests" class="text-white p-2">INNE</a>
         </div>
         <div class="flex">
             <a href="/" class="text-white font-bold text-center w-full p-2"
                 >inf02.filipton.space</a
             >
         </div>
+
         <div class="flex">
-            <a href="/base" class="text-white p-2">BAZA</a>
+            <a href="/other" class="text-white p-2">INNE</a>
         </div>
     </div>
 </div>

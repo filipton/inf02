@@ -17,7 +17,6 @@
     }
 </script>
 
-{file}
 <div class="h-screen max-w-2xl mx-auto">
     <MarkdownEditor />
 </div>
