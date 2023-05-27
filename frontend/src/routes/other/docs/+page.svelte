@@ -13,6 +13,19 @@
                 const entry = d.find((e) => e.url === file);
                 if (entry) {
                     shownMarkdown = entry.markdown;
+
+                    if ($page.url.hash) {
+                        setTimeout(() => {
+                            const element = document.getElementById(
+                                $page.url.hash.slice(1)
+                            );
+                            if (element) {
+                                element.scrollIntoView({
+                                    behavior: "smooth",
+                                });
+                            }
+                        }, 100);
+                    }
                 } else {
                     shownMarkdown = `# Docs not found: ${file}`;
                 }
