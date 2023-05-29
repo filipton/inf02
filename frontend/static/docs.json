@@ -5,7 +5,7 @@
   },
   {
     "url": "README.md",
-    "markdown": "# Poradniki\n\n## Mikortiki\n - [Instalacja maszyn VBox/VMWare](mikortik/Instllation.md)\n\n## Linux\n - [Ogolne informacje](Linux.md)\n - [SSH](Linux-SSH.md)\n"
+    "markdown": "# Poradniki\n\n## Mikortiki\n - [Instalacja maszyn VBox/VMWare](mikrotik/Installation.md)\n\n## Linux\n - [Ogolne informacje](Linux.md)\n - [SSH](Linux-SSH.md)\n"
   },
   {
     "url": "Linux.md",
