@@ -16,6 +16,16 @@
     function replaceUrls(content: string) {
         let urls = [...content.matchAll(URL_REGEX)];
         for (let url of urls) {
+            // fix img alt attribute
+            url[2] = url[2].split('"')[0];
+
+            if (url[2].includes("images/") && !url[2].endsWith(".md")) {
+                content = content.replace(
+                    url[0],
+                    url[0].replace(url[1], window.location.origin + "/")
+                );
+            }
+
             if (url[2].startsWith("#")) {
                 content = content.replace(url[0], url[2]);
             } else {
@@ -30,6 +40,6 @@
     }
 </script>
 
-<article class="markdown-body">
+<article class="markdown-body pb-4">
     {@html replaceUrls(marked(input, { mangle: false }))}
 </article>
