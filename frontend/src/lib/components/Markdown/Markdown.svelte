@@ -12,13 +12,10 @@
     });
     marked.use(baseUrl("http://base.url"));
 
-    const URL_REGEX = /"(http:\/\/base.url\/)(.*)"/g;
+    const URL_REGEX = /"(http:\/\/base.url\/)([^"]*)"/g;
     function replaceUrls(content: string) {
         let urls = [...content.matchAll(URL_REGEX)];
         for (let url of urls) {
-            // fix img alt attribute
-            url[2] = url[2].split('"')[0];
-
             if (url[2].includes("images/") && !url[2].endsWith(".md")) {
                 content = content.replace(
                     url[0],
@@ -29,6 +26,7 @@
             if (url[2].startsWith("#")) {
                 content = content.replace(url[0], url[2]);
             } else {
+                console.log(url[0]);
                 content = content.replace(
                     url[0],
                     url[0].replace(url[1], "?v=")
