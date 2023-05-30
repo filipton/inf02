@@ -5,7 +5,7 @@
   },
   {
     "url": "README.md",
-    "markdown": "# Poradniki\n\n## Mikrotiki\n - [Instalacja maszyn VBox/VMWare](/mikrotik/Installation.md)\n - [QuickSet - WIFI/LAN/WAN](/mikrotik/QuickSet.md)\n - [Reczne ustawianie adresow](/mikrotik/Addressess.md)\n - [NAT](/mikrotik/NAT.md)\n\n## Linux (Autor: Wiktor)\n - [Ogolne informacje](/Linux.md)\n - [SSH](/Linux-SSH.md)\n"
+    "markdown": "# Poradniki\n\n## Mikrotiki\n - [Instalacja maszyn VBox/VMWare](/mikrotik/Installation.md)\n - [QuickSet - WIFI/LAN/WAN](/mikrotik/QuickSet.md)\n - [Reczne ustawianie adresow](/mikrotik/Addressess.md)\n - [Bridge](/mikrotik/Bridge.md)\n - [NAT](/mikrotik/NAT.md)\n - [Przekierowanie](/mikrotik/Redirections.md)\n\n## Linux (Autor: Wiktor)\n - [Ogolne informacje](/Linux.md)\n - [SSH](/Linux-SSH.md)\n"
   },
   {
     "url": "Linux.md",
@@ -22,6 +22,14 @@
   {
     "url": "mikrotik/NAT.md",
     "markdown": "# NAT\n\n## Sposob uzywajac [Quick Set](/mikrotik/QuickSet.md)\n![](/images/nat_quickset.png)\n\n**Zakladam ze inne opcje w Quick Set sa juz skonfigurowane - inaczej nie bedzie mozna zapisac zmian!**\n\n- Wlaczamy opcje `Bridge All LAN Ports` - jezeli chcemy [konfigurowac bridge recznie](/mikrotik/Bridge.md) to zostawiamy ta opcje wylaczona (po konfiguracji bridge ona znika, wiec mozemy wogole nie miec tej opcji)\n- Wlaczamy opcje `NAT` - spowoduje ona utworzenie reguly NAT, portem WAN bedzie `ether1` no chyba ze ustawimy na gorze inny `Port`\n\n## Sposob tworzac regule NAT recznie\nJezeli nie chcemy uzywac opcji Quick Set to mozemy recznie dodac regule firewall'a dla NAT.\n\n- [Tworzymy bridge](/mikrotik/Bridge.md) jezeli nie mamy i przypisujemy do niego **TYLKO** porty LAN\n\n- Wchodzimy w zakladke `IP > Firewall` i w \"kartach\" szukamy `NAT`\n- ![](/images/nat_firewall_bm.png)\n\n- Dodajemy tutaj \"+\" nowa regule\n\n- W okienku i zakladce `General`\n  - `Chain` - srcnat\n  - `Out. Interface` - tutaj dajemy nasz port **WAN**\n  - ![](/images/nat_new_rule_general.png)\n\n- W zakladce `Action` ustawiamy `masquerade`\n- ![](/images/nat_new_rule_action.png)\n\n- Klikamy `Apply`"
+  },
+  {
+    "url": "mikrotik/Bridge.md",
+    "markdown": "# Bridge\nBridge mozna wytlumaczyc jako \"virtualny switch\", wiec zazwyczaj tworzymy bridge na **wszystkie porty LAN**.\n\n## Tworzenie bridge'a\nWchodzimy w zakladke `Bridge` i w \"pod-zakladce\" `Bridge` tworzymy sobie nowego bridge'a (nazywamy go jak chcemy)\n\n## Przypisanie portow do bridge'a\n- Wchodzimy w podzakladke `Ports`\n- Dodajemy wszystkie porty, ktore chcemy do naszego bridge'a\n- ![](/images/bridge_add_ports.png)"
+  },
+  {
+    "url": "mikrotik/Redirections.md",
+    "markdown": "# Przekierowania\nRobimy przekierowanie zeby bedac polaczanym z portem WAN mikrotika miec dostep np. do strony WWW postawionej na urzadzeniu w sieci LAN.\n\n## Sposob z [Quick Set](/mikrotik/QuickSet.md)\n**Do tego sposobu bedziemy potrzebowali miec skonfigurowanego NAT'a w Quick Set oraz adresow IP WAN i LAN**\n\n- W zakladce `Quick Set` jezeli mam wlaczony `NAT` pojawi sie nowy button `Port Mapping` w ktorego wchodzimy\n- ![](/images/redir_portmapping.png)\n- Naciskamy tam \"+\" i dodajemy nowy mapping\n  - `Protocol` - jaki chcemy (pewnie bedzie to TCP)\n  - `Port` - port na mikrotiku (na WAN'ie)\n  - `To Address` - adres LAN serwera\n  - `To Port` - port np. WWW serwera \n  - ![](/images/redir_portmapping_new.png)\n\n## Sposob bez Quick Set'a\n**Do tego sposobu bedziemy potrzebowali ustawic [recznie regule NAT](/mikrotik/NAT.md#sposob-tworzac-regule-nat-recznie) i musimy recznie [ustawic adres IP naszego bridge'a i portu WAN](/mikrotik/Addressess.md)!**\n\n- Wchodzimy w zakladke `IP > Firewall` i przechodzimy do podzakladki `NAT`\n- Dodajemy nowa regule i ustawiamy:\n  - `Chain` - dstnat\n  - `Protocol` - jaki chcemy (pewnie bedzie to TCP)\n  - `Dst. Port` - port na mikrotiku (na WAN'ie)\n  - W podzakladce `Action` zmieniamy `Action` na `dst-nat`\n    - Ustawiamy `To Addresses` oraz `To Ports` na adres i port serwera w sieci **LAN**\n- Wiadomo na koncu `Apply`\n\n![](/images/redir_general_tab.png)\n![](/images/redir_action_tab.png)"
   },
   {
     "url": "mikrotik/Addressess.md",
