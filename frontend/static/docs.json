@@ -5,7 +5,7 @@
   },
   {
     "url": "README.md",
-    "markdown": "# Poradniki\n\n## Mikrotiki\n - [Instalacja maszyn VBox/VMWare](/mikrotik/Installation.md)\n - [QuickSet - WIFI/LAN/WAN](/mikrotik/QuickSet.md)\n - [Wifi](/mikrotik/Wifi.md)\n - [Reczne ustawianie adresow](/mikrotik/Addressess.md)\n - [Bridge](/mikrotik/Bridge.md)\n - [NAT](/mikrotik/NAT.md)\n - [Przekierowanie](/mikrotik/Redirections.md)\n - [DHCP Server](/mikrotik/DHCP-Server.md)\n - [VLAN'y](/mikrotik/VLAN.md)\n - [InterVlan Routing](/mikrotik/InterVlanRouting.md)\n - [Routing](/mikrotik/Routing.md)\n\n## Linux (Autor: Wiktor)\n - [Ogolne informacje](/Linux.md)\n - [SSH](/Linux-SSH.md)\n"
+    "markdown": "# Poradniki\n\n## Mikrotiki\n - [Instalacja maszyn VBox/VMWare](/mikrotik/Installation.md)\n - [QuickSet - WIFI/LAN/WAN](/mikrotik/QuickSet.md)\n - [Wifi](/mikrotik/Wifi.md)\n - [Reczne ustawianie adresow](/mikrotik/Addressess.md)\n - [Bridge](/mikrotik/Bridge.md)\n - [NAT](/mikrotik/NAT.md)\n - [Przekierowanie](/mikrotik/Redirections.md)\n - [DHCP Server](/mikrotik/DHCP-Server.md)\n - [VLAN'y](/mikrotik/VLAN.md)\n - [InterVlan Routing](/mikrotik/InterVlanRouting.md)\n - [Routing - Trasa Statyczna](/mikrotik/Routing.md)\n\n## Linux (Autor: Wiktor)\n - [Ogolne informacje](/Linux.md)\n - [SSH](/Linux-SSH.md)\n"
   },
   {
     "url": "Linux.md",
@@ -33,7 +33,7 @@
   },
   {
     "url": "mikrotik/Routing.md",
-    "markdown": "# Routing\nJezeli w arkuszu mamy podane ustawienie routingu (statycznego) dla danej sieci i dla danego adresu bramu to musimy skonfigurowac to w taki sposob.\n\n- Wchodzimy w zakladke `IP > Routes`\n- Dodajemy nowy\n  - `Dst. Address` - adres sieci docelowej\n  - `Gateway` - adres bramy (tutaj tez mozna wpisac nazwe portu/bridge'a itp)\n- ![](/images/routing_new_route.png)\n\n## Co oznacza ta konfiguracja?\nJezeli w `Dst. Address` mamy `192.168.1.0/24` a w `Gateway` mamy `192.168.0.10` oznacza to ze chcac sie laczyc do sieci wskazanej powyzej laczymy sie poprzez adres bramy `192.168.0.10`."
+    "markdown": "# Routing - Trasa Statyczna\nJezeli w arkuszu mamy podane ustawienie routingu (statycznego) dla danej sieci i dla danego adresu bramu to musimy skonfigurowac to w taki sposob.\n\n- Wchodzimy w zakladke `IP > Routes`\n- Dodajemy nowy\n  - `Dst. Address` - adres sieci docelowej\n  - `Gateway` - adres bramy (tutaj tez mozna wpisac nazwe portu/bridge'a itp)\n- ![](/images/routing_new_route.png)\n\n## Co oznacza ta konfiguracja?\nJezeli w `Dst. Address` mamy `192.168.1.0/24` a w `Gateway` mamy `192.168.0.10` oznacza to ze chcac sie laczyc do sieci wskazanej powyzej laczymy sie poprzez adres bramy `192.168.0.10`.\n\n## Przyklad z polecenia\n```\nustawiona trasa statyczna dla podsieci 192.168.1.0/24 z dostępem przez bramę 192.168.0.15\n```"
   },
   {
     "url": "mikrotik/Redirections.md",
