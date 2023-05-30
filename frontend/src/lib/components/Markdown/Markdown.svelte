@@ -26,7 +26,6 @@
             if (url[2].startsWith("#")) {
                 content = content.replace(url[0], url[2]);
             } else {
-                console.log(url[0]);
                 content = content.replace(
                     url[0],
                     url[0].replace(url[1], "?v=")
