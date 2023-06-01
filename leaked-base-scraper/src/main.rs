@@ -35,14 +35,14 @@ fn main() -> Result<()> {
                 let captures = re.captures(&inner_html).unwrap();
 
                 let url = captures.get(1).unwrap().as_str();
-                tmp_question.video = Some(url.to_string());
+                tmp_question.video = Some(url.replace("Multimedia/", "").to_string());
                 continue;
             } else if inner_html.contains("img") {
                 let re = regex::Regex::new(r#"src="(([^"])*.(JPG|PNG|jpg|png|mp4))""#).unwrap();
                 let captures = re.captures(&inner_html).unwrap();
 
                 let url = captures.get(1).unwrap().as_str();
-                tmp_question.image = Some(url.to_string());
+                tmp_question.image = Some(url.replace("Multimedia/", "").to_string());
                 continue;
             }
 

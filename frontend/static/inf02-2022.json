@@ -46,7 +46,7 @@
   {
     "id": 4,
     "text": "Na rysunku jest przedstawiona karta",
-    "image": "Multimedia/24480000-5d64-0015-482d-08d912ff47f8.PNG",
+    "image": "24480000-5d64-0015-482d-08d912ff47f8.PNG",
     "anwsers": [
       "sieciowa Fibre Channel.",
       "sieciowa Token Ring.",
@@ -58,7 +58,7 @@
   {
     "id": 5,
     "text": "Za pomocą programu Acrylic Wi-Fi Home wykonano test, którego wyniki przedstawiono na zrzucie. Co można stwierdzić na jego podstawie o dostępnej sieci bezprzewodowej?",
-    "image": "Multimedia/24480000-5d64-0015-6463-08d913039830.PNG",
+    "image": "24480000-5d64-0015-6463-08d913039830.PNG",
     "anwsers": [
       "Sieć bezprzewodowa osiąga maksymalną szybkość transferu 72 Mbps.",
       "Sieć bezprzewodowa ma bardzo dobrą jakość sygnału.",
@@ -180,7 +180,7 @@
   {
     "id": 16,
     "text": "W przedstawionej tabeli kompatybilne podzespoły są oznaczone numerami",
-    "image": "Multimedia/24480000-5d64-0015-44f0-08d912ff7fdf.PNG",
+    "image": "24480000-5d64-0015-44f0-08d912ff7fdf.PNG",
     "anwsers": [
       "2, 4 i 6",
       "2, 4 i 5",
@@ -214,7 +214,7 @@
   {
     "id": 19,
     "text": "Na podstawie tabeli wskaż prawidłową kolejność etapów wykonania szkolnej sieci komputerowej.",
-    "image": "Multimedia/24480000-5d64-0015-80ac-08d91305d8fa.PNG",
+    "image": "24480000-5d64-0015-80ac-08d91305d8fa.PNG",
     "anwsers": [
       "1, 5, 2, 3, 4, 6",
       "1, 5, 4, 2, 3, 6",
@@ -248,7 +248,7 @@
   {
     "id": 22,
     "text": "Które ze zdań jest prawdziwe dla przedstawionej konfiguracji usługi DHCP w systemie Linux?",
-    "image": "Multimedia/24480000-5d64-0015-1833-08d91304c6e3.PNG",
+    "image": "24480000-5d64-0015-1833-08d91304c6e3.PNG",
     "anwsers": [
       "Komputerom są przydzielane adresy IP z zakresu 176.16.20.251 ÷ 255.255.255.0.",
       "Komputerom są przydzielane adresy IP z zakresu 176.16.20.50 ÷ 176.16.20.250.",
@@ -271,7 +271,7 @@
   {
     "id": 24,
     "text": "Zgodnie z tabelą z dokumentacji technicznej gry komputerowej wymagana wielkość pliku wymiany wynosi",
-    "image": "Multimedia/24480000-5d64-0015-deea-08d913058e7e.PNG",
+    "image": "24480000-5d64-0015-deea-08d913058e7e.PNG",
     "anwsers": [
       "256 MB",
       "8 GB",
@@ -283,7 +283,7 @@
   {
     "id": 25,
     "text": "Po wydaniu przedstawionego polecenia systemu Windows, wartość 11 zostanie ustawiona dla",
-    "image": "Multimedia/24480000-5d64-0015-1881-08d91300db89.PNG",
+    "image": "24480000-5d64-0015-1881-08d91300db89.PNG",
     "anwsers": [
       "minimalnej liczby minut, przez które użytkownik może być zalogowany.",
       "maksymalnej liczby dni między zmianami haseł użytkowników.",
@@ -306,7 +306,7 @@
   {
     "id": 27,
     "text": "Na rysunku przedstawiono konfigurację urządzenia, z której wynika, że",
-    "image": "Multimedia/24480000-5d64-0015-da06-08d913042568.PNG",
+    "image": "24480000-5d64-0015-da06-08d913042568.PNG",
     "anwsers": [
       "VLAN z ID48 jest skonfigurowany jako zarządzalny.",
       "utworzono trzy nowe VLANy: ID1, ID13, ID48.",
@@ -329,7 +329,7 @@
   {
     "id": 29,
     "text": "Na rysunku przedstawiono zakończenie kabla",
-    "image": "Multimedia/24480000-5d64-0015-81d6-08d913022b00.PNG",
+    "image": "24480000-5d64-0015-81d6-08d913022b00.PNG",
     "anwsers": [
       "światłowodowego.",
       "koncentrycznego.",
@@ -341,7 +341,7 @@
   {
     "id": 30,
     "text": "Drukarka, której schemat przedstawiono na rysunku, ma nierównomiernie podawany toner na bęben. W tym przypadku należy wymienić wałek magnetyczny, oznaczony cyfrą",
-    "image": "Multimedia/24480000-5d64-0015-027c-08d9130148d9.PNG",
+    "image": "24480000-5d64-0015-027c-08d9130148d9.PNG",
     "anwsers": [
       "4",
       "3",
@@ -364,7 +364,7 @@
   {
     "id": 32,
     "text": "Złącze uniwersalne: 2,5 mm / 125 mm<br></br>Długość fali: 850 kalibrowane, 1300, 1310, 1490, 1550 nm<br></br>Wyświetlacz 4-cyfrowy umożliwia precyzyjne pomiary w dBm, dB, i UW<br></br>Intuicyjna obsługa 2-przyciskowa<br></br>Zakres pomiarowy: od +5 do -60 dBm<br></br>Dokładność: +/- 0,15 dB<br></br>Rozdzielczość: 0,01 dBm<br></br>Liniowość: +/- 0,20 dB",
-    "image": "Multimedia/24480000-5d64-0015-4e75-08d913027e2b.PNG",
+    "image": "24480000-5d64-0015-4e75-08d913027e2b.PNG",
     "anwsers": [
       "światłowodowego.",
       "koncentrycznego.",
@@ -398,7 +398,7 @@
   {
     "id": 35,
     "text": "Rysunek przedstawia panel konfiguracyjny bezprzewodowego urządzenia dostępowego, który umożliwia",
-    "image": "Multimedia/24480000-5d64-0015-5dc6-08d91304787b.PNG",
+    "image": "24480000-5d64-0015-5dc6-08d91304787b.PNG",
     "anwsers": [
       "przypisanie adresów MAC kart sieciowych.",
       "konfigurację serwera DHCP.",
@@ -410,7 +410,7 @@
   {
     "id": 36,
     "text": "Wydane na filmie polecenia wykonane w systemie Windows spowoduja",
-    "video": "Multimedia/24480000-5d64-0015-906b-08d9130017d1.mp4",
+    "video": "24480000-5d64-0015-906b-08d9130017d1.mp4",
     "anwsers": [
       "ustawienie atrybutu zabezpieczającego przed przypadkowym usunięciem katalogu <em>C:\\egzamin</em>",
       "utworzenie i ukrycie pliku tekstowego zawierającego listę plików z katalogu<em> C:\\egzamin</em>",
@@ -422,7 +422,7 @@
   {
     "id": 37,
     "text": "Przedstawione na rysunku urządzenie służy do",
-    "image": "Multimedia/24480000-5d64-0015-9425-08d91303fa31.PNG",
+    "image": "24480000-5d64-0015-9425-08d91303fa31.PNG",
     "anwsers": [
       "wytworzenia sygnału dla kabla koncentrycznego, wykorzystując wzmocniony sygnał ze skrętki.",
       "przekazywania ramki między segmentami sieci z doborem portu, na który jest przekazywana.",
@@ -445,7 +445,7 @@
   {
     "id": 39,
     "text": "Który typ fizycznej topologii sieci komputerowej przedstawiono na rysunku?",
-    "image": "Multimedia/24480000-5d64-0015-1c7b-08d912ff011d.PNG",
+    "image": "24480000-5d64-0015-1c7b-08d912ff011d.PNG",
     "anwsers": [
       "Pierścienia.",
       "Magistrali.",
@@ -490,7 +490,7 @@
   {
     "id": 43,
     "text": "Na podstawie przedstawionej na ilustracji konfiguracji kart sieciowych można stwierdzić, że",
-    "image": "Multimedia/f0730000-bb04-7aea-a068-08da2a13f770.PNG",
+    "image": "f0730000-bb04-7aea-a068-08da2a13f770.PNG",
     "anwsers": [
       "interfejs Bluetooth ma przydzielony adres IPv4 192.168.0.102",
       "wszystkie karty uzyskują adresy poprzez protok&oacute;ł DHCP",
@@ -524,7 +524,7 @@
   {
     "id": 46,
     "text": "Przedstawiony schemat obrazuje zasadę działania skanera",
-    "image": "Multimedia/47ec0000-f683-928a-9c14-08da37283be5.jpg",
+    "image": "47ec0000-f683-928a-9c14-08da37283be5.jpg",
     "anwsers": [
       "płaskiego.",
       "ręcznego.",
@@ -558,7 +558,7 @@
   {
     "id": 49,
     "text": "Aby uzyskać maksymalną wydajność obliczeniową komputera, kt&oacute;rego płyta gł&oacute;wna jest przedstawiona na ilustracji, zaleca się",
-    "image": "Multimedia/47ec0000-f683-928a-85c6-08da29c51941.PNG",
+    "image": "47ec0000-f683-928a-85c6-08da29c51941.PNG",
     "anwsers": [
       "zainstalowanie pamięci RAM we wszystkich gniazdach.",
       "zainstalowanie dw&oacute;ch procesor&oacute;w.",
@@ -570,7 +570,7 @@
   {
     "id": 50,
     "text": "Kt&oacute;ry port na przedstawionej płycie gł&oacute;wnej umożliwia podłączenie zewnętrznego dysku poprzez interfejs e-SATA?",
-    "image": "Multimedia/f0730000-bb04-7aea-a88a-08da29ec9f58.PNG",
+    "image": "f0730000-bb04-7aea-a88a-08da29ec9f58.PNG",
     "anwsers": [
       "4",
       "3",
@@ -593,7 +593,7 @@
   {
     "id": 52,
     "text": "Na podstawie instrukcji przełącznika wskaż, kt&oacute;ra z opcji menu przywraca ustawienia fabryczne.",
-    "image": "Multimedia/f0730000-bb04-7aea-667f-08da2a1579e1.PNG",
+    "image": "f0730000-bb04-7aea-667f-08da2a1579e1.PNG",
     "anwsers": [
       "Save Configuration",
       "Firmware Upgrade",
@@ -605,7 +605,7 @@
   {
     "id": 53,
     "text": "Do podłączenia dysku wyposażonego w interfejs SAS należy zastosować",
-    "image": "Multimedia/f0730000-bb04-7aea-425a-08da29995981.JPG",
+    "image": "f0730000-bb04-7aea-425a-08da29995981.JPG",
     "anwsers": [
       "złącze 4.",
       "złącze 3.",
@@ -617,7 +617,7 @@
   {
     "id": 54,
     "text": "Przedstawione na ilustracji urządzenie można wykorzystać do pomiar&oacute;w okablowania",
-    "image": "Multimedia/f0730000-bb04-7aea-fb58-08da2a126c50.PNG",
+    "image": "f0730000-bb04-7aea-fb58-08da2a126c50.PNG",
     "anwsers": [
       "telefonicznego kategorii 3.",
       "skrętki kategorii 5e/6.",
@@ -662,7 +662,7 @@
   {
     "id": 58,
     "text": "Jedną z przyczyn pokazanego na ilustracji problemu z wydrukiem z drukarki laserowej może być",
-    "image": "Multimedia/47ec0000-f683-928a-bff7-08da29f7ef0b.PNG",
+    "image": "47ec0000-f683-928a-bff7-08da29f7ef0b.PNG",
     "anwsers": [
       "zaschnięty tusz na głowicy drukującej.",
       "uszkodzony bęben światłoczuły.",
@@ -674,7 +674,7 @@
   {
     "id": 59,
     "text": "Przedstawiony opis dotyczy",
-    "image": "Multimedia/f0730000-bb04-7aea-34ba-08da2a19b4f3.PNG",
+    "image": "f0730000-bb04-7aea-34ba-08da2a19b4f3.PNG",
     "anwsers": [
       "procedury wymiany radiatora z wentylatorem.",
       "podłączania zasilania do płyty gł&oacute;wnej.",
@@ -686,7 +686,7 @@
   {
     "id": 60,
     "text": "Na kt&oacute;rym rysunku przedstawiono topologię sieci typu rozszerzona gwiazda?",
-    "image": "Multimedia/f0730000-bb04-7aea-3cc4-08da29951fdb.JPG",
+    "image": "f0730000-bb04-7aea-3cc4-08da29951fdb.JPG",
     "anwsers": [
       "Na rysunku 4.",
       "Na rysunku 3.",
@@ -720,7 +720,7 @@
   {
     "id": 63,
     "text": "Co stanie się w wyniku wykonania przedstawionego skryptu?",
-    "image": "Multimedia/f0730000-bb04-7aea-c1a2-08da29ebd8bc.PNG",
+    "image": "f0730000-bb04-7aea-c1a2-08da29ebd8bc.PNG",
     "anwsers": [
       "Zawartość pliku <em>ala.txt </em>zostanie skopiowana do pliku <em>ola.txt</em>",
       "Zawartość pliku <em>ola.txt </em>zostanie skopiowana do pliku <em>ala.txt</em>",
@@ -732,7 +732,7 @@
   {
     "id": 64,
     "text": "W filmie przedstawiono adapter",
-    "video": "Multimedia/47ec0000-f683-928a-2fa3-08da29f72abd.mp4",
+    "video": "47ec0000-f683-928a-2fa3-08da29f72abd.mp4",
     "anwsers": [
       "HDMI &ndash; D-Sub",
       "HDMI &ndash; FireWire",
@@ -755,7 +755,7 @@
   {
     "id": 66,
     "text": "Kt&oacute;re urządzenie jest przedstawione na ilustracji?",
-    "image": "Multimedia/f0730000-bb04-7aea-6598-08da2a14d848.PNG",
+    "image": "f0730000-bb04-7aea-6598-08da2a14d848.PNG",
     "anwsers": [
       "Punkt dostępowy.",
       "Zasilacz PoE.",
@@ -910,7 +910,7 @@
   {
     "id": 80,
     "text": "Który symbol oznacza przełącznik?",
-    "image": "Multimedia/47ec0000-f683-928a-fe8d-08d9ab695efe.JPG",
+    "image": "47ec0000-f683-928a-fe8d-08d9ab695efe.JPG",
     "anwsers": [
       "Symbol 4",
       "Symbol 3",
@@ -933,7 +933,7 @@
   {
     "id": 82,
     "text": "Wskaż polecenie, którego wynik przedstawiono na rysunku.",
-    "image": "Multimedia/47ec0000-f683-928a-d4ab-08d9ab68ec05.JPG",
+    "image": "47ec0000-f683-928a-d4ab-08d9ab68ec05.JPG",
     "anwsers": [
       "netstat",
       "tracert",
@@ -945,7 +945,7 @@
   {
     "id": 83,
     "text": "Wskaż materiał eksploatacyjny typowy dla drukarek żelowych.",
-    "image": "Multimedia/47ec0000-f683-928a-2f30-08d9ab68561c.JPG",
+    "image": "47ec0000-f683-928a-2f30-08d9ab68561c.JPG",
     "anwsers": [
       "Materiał 4",
       "Materiał 3",
@@ -1045,7 +1045,7 @@
   {
     "id": 92,
     "text": "Na przedstawionym schemacie blokowym element płyty głównej odpowiedzialny za wymianę danych między<br></br>mikroprocesorem a pamięcią operacyjną RAM oraz magistralą karty graficznej jest na rysunku oznaczony<br></br>numerem",
-    "image": "Multimedia/47ec0000-f683-928a-66f1-08d9ab65463b.JPG",
+    "image": "47ec0000-f683-928a-66f1-08d9ab65463b.JPG",
     "anwsers": [
       "3",
       "4",
@@ -1068,7 +1068,7 @@
   {
     "id": 94,
     "text": "Do którego rodzaju wtyków jest stosowana przedstawiona na rysunku zaciskarka?",
-    "image": "Multimedia/47ec0000-f683-928a-3659-08d9ad8ff994.JPG",
+    "image": "47ec0000-f683-928a-3659-08d9ad8ff994.JPG",
     "anwsers": [
       "SC/APC",
       "6P2C",
@@ -1080,7 +1080,7 @@
   {
     "id": 95,
     "text": "Na rysunkach technicznych instalacji sieci komputerowej wraz z dedykowaną jej instalacją elektryczną<br></br>symbolem przedstawionym na rysunku oznacza się gniazdo",
-    "image": "Multimedia/47ec0000-f683-928a-d738-08d9ab64f222.JPG",
+    "image": "47ec0000-f683-928a-d738-08d9ab64f222.JPG",
     "anwsers": [
       "elektryczne ze stykiem ochronnym.",
       "elektryczne bez styku ochronnego.",
@@ -1092,7 +1092,7 @@
   {
     "id": 96,
     "text": "Wskaż typ złącza przedstawionej karty graficznej.",
-    "image": "Multimedia/47ec0000-f683-928a-bede-08d9ab661645.JPG",
+    "image": "47ec0000-f683-928a-bede-08d9ab661645.JPG",
     "anwsers": [
       "PCI-E x16",
       "PCI-E x4",
@@ -1137,7 +1137,7 @@
   {
     "id": 100,
     "text": "Analiza wyświetlonych przez program danych, pozwala stwierdzić, że",
-    "image": "Multimedia/47ec0000-f683-928a-7547-08d9ab66635e.JPG",
+    "image": "47ec0000-f683-928a-7547-08d9ab66635e.JPG",
     "anwsers": [
       "partycja wymiany zajmuje 2 GiB.",
       "partycja rozszerzona ma wielkość 24,79 GiB.",
@@ -1193,7 +1193,7 @@
   {
     "id": 105,
     "text": "Aby uruchomić przedstawione narzędzie systemu Windows 10, należy w interpreterze poleceń użyć",
-    "image": "Multimedia/47ec0000-f683-928a-3ef8-08d9ab6758a1.JPG",
+    "image": "47ec0000-f683-928a-3ef8-08d9ab6758a1.JPG",
     "anwsers": [
       "<span data-mce-bogus=\"true\" style=\"\" id=\"_mce_caret\"><em>﻿net users</em></span><br data-mce-bogus=\"1\"></br>",
       "<em>net localgroup</em>",
@@ -1205,7 +1205,7 @@
   {
     "id": 106,
     "text": "Które słowo kluczowe należy wpisać w miejsce kropek, aby udostępnić folder <em>Dane</em> pod nazwą<em> test</em>?",
-    "image": "Multimedia/47ec0000-f683-928a-7c78-08d9ab65bc8e.JPG",
+    "image": "47ec0000-f683-928a-7c78-08d9ab65bc8e.JPG",
     "anwsers": [
       "connect",
       "share",
@@ -1283,7 +1283,7 @@
   {
     "id": 113,
     "text": "Na podstawie dokumentacji technicznej procesora wskaż liczbę jego wątków.",
-    "image": "Multimedia/f0730000-bb04-7aea-a871-08d9ad9458e8.JPG",
+    "image": "f0730000-bb04-7aea-a871-08d9ad9458e8.JPG",
     "anwsers": [
       "24",
       "16",
@@ -1317,7 +1317,7 @@
   {
     "id": 116,
     "text": "Na rysunku przedstawiono narzędzie do",
-    "image": "Multimedia/47ec0000-f683-928a-c6e9-08d9ad907ed3.JPG",
+    "image": "47ec0000-f683-928a-c6e9-08d9ad907ed3.JPG",
     "anwsers": [
       "montażu okablowania w gnieździe sieciowym.",
       "zdejmowania izolacji z kabli.",
@@ -1351,7 +1351,7 @@
   {
     "id": 119,
     "text": "Na obrazie przedstawiono konfigurację urządzenia. Do których portów należy podłączyć serwer o adresie<br></br>IP 192.168.20.254/24 oraz stację roboczą o adresie IP 192.168.20.10/24, aby zapewnić komunikację tych<br></br>urządzeń w sieci?",
-    "image": "Multimedia/f0730000-bb04-7aea-c656-08d9ad9b505c.JPG",
+    "image": "f0730000-bb04-7aea-c656-08d9ad9b505c.JPG",
     "anwsers": [
       "Do portów 3 i 4",
       "Do portów 1 i 3",
@@ -1363,7 +1363,7 @@
   {
     "id": 120,
     "text": "Przedstawione polecenia, uruchomione w interfejsie CLI rutera CISCO, spowodują",
-    "image": "Multimedia/f0730000-bb04-7aea-4dbc-08d9ad9ba9e8.JPG",
+    "image": "f0730000-bb04-7aea-4dbc-08d9ad9ba9e8.JPG",
     "anwsers": [
       "ustawienie interfejsu wewnętrznego o adresie 10.0.0.1/24 dla technologii NAT",
       "ustawienie interfejsu zewnętrznego o adresie 10.0.0.1/24 dla technologii NAT",
@@ -1496,7 +1496,7 @@
   {
     "id": 132,
     "text": "Które słowo kluczowe należy wpisać w miejsce kropek, aby udostępnić folder <em>Dane</em> pod nazwą <em>test?</em>",
-    "image": "Multimedia/f0730000-bb04-7aea-8ef4-08d9ad9682bc.JPG",
+    "image": "f0730000-bb04-7aea-8ef4-08d9ad9682bc.JPG",
     "anwsers": [
       "connect",
       "share",
@@ -1530,7 +1530,7 @@
   {
     "id": 135,
     "text": "Na fotografii przedstawiono",
-    "image": "Multimedia/f0730000-bb04-7aea-655a-08d9ad98c014.JPG",
+    "image": "f0730000-bb04-7aea-655a-08d9ad98c014.JPG",
     "anwsers": [
       "taśmę barwiącą.",
       "kartridż.",
@@ -1564,7 +1564,7 @@
   {
     "id": 138,
     "text": "Wskaż polecenie, którego wynik przedstawiono na rysunku.",
-    "image": "Multimedia/f0730000-bb04-7aea-4e31-08d9ad9a9130.JPG",
+    "image": "f0730000-bb04-7aea-4e31-08d9ad9a9130.JPG",
     "anwsers": [
       "netstat",
       "tracert",
@@ -1587,7 +1587,7 @@
   {
     "id": 140,
     "text": "Na rysunku przedstawiono przekrój kabla",
-    "image": "Multimedia/f0730000-bb04-7aea-0661-08d9ad995f5c.JPG",
+    "image": "f0730000-bb04-7aea-0661-08d9ad995f5c.JPG",
     "anwsers": [
       "koncentrycznego.",
       "optycznego.",
@@ -1610,7 +1610,7 @@
   {
     "id": 142,
     "text": "Na obrazie przedstawiono tylny panel stacji roboczej. Strzałką oznaczono port",
-    "image": "Multimedia/f0730000-bb04-7aea-6c83-08d9ad984057.JPG",
+    "image": "f0730000-bb04-7aea-6c83-08d9ad984057.JPG",
     "anwsers": [
       "DisplayPort",
       "USB 3.0",
@@ -1622,7 +1622,7 @@
   {
     "id": 143,
     "text": "Na fotografii przedstawiono",
-    "image": "Multimedia/f0730000-bb04-7aea-2b94-08d9ad9999d2.JPG",
+    "image": "f0730000-bb04-7aea-2b94-08d9ad9999d2.JPG",
     "anwsers": [
       "zaciskarkę wtyków 8P8C.",
       "zaciskarkę do tulejek.",
@@ -1634,7 +1634,7 @@
   {
     "id": 144,
     "text": "Przedstawiony fragment konfiguracji zapory sieciowej zezwala na ruch sieciowy z wykorzystaniem<br></br>domyślnych portów protokołów",
-    "image": "Multimedia/f0730000-bb04-7aea-7488-08d9ad9bf52a.JPG",
+    "image": "f0730000-bb04-7aea-7488-08d9ad9bf52a.JPG",
     "anwsers": [
       "HTTPS, IMAP",
       "HTTP, SMPT",
@@ -1668,7 +1668,7 @@
   {
     "id": 147,
     "text": "Na schemacie przedstawiono topologię sieci",
-    "image": "Multimedia/f0730000-bb04-7aea-8c4b-08d9ad956126.JPG",
+    "image": "f0730000-bb04-7aea-8c4b-08d9ad956126.JPG",
     "anwsers": [
       "mesh.",
       "ring.",
@@ -1735,7 +1735,7 @@
   {
     "id": 153,
     "text": "Na podstawie dokumentacji technicznej procesora wskaż liczbę jego wątków.",
-    "image": "Multimedia/f0730000-bb04-7aea-37a9-08d9ad9d81a2.JPG",
+    "image": "f0730000-bb04-7aea-37a9-08d9ad9d81a2.JPG",
     "anwsers": [
       "24",
       "16",
@@ -1802,7 +1802,7 @@
   {
     "id": 159,
     "text": "Wynik działania polecenia <span style=\"font-family: 'courier new', courier, monospace;\">ls -l</span> użytego w systemie Linux jest przedstawiony na",
-    "image": "Multimedia/47ec0000-f683-928a-ab2e-08da292835a6.JPG",
+    "image": "47ec0000-f683-928a-ab2e-08da292835a6.JPG",
     "anwsers": [
       "wyniku 4.",
       "wyniku 3.",
@@ -1858,7 +1858,7 @@
   {
     "id": 164,
     "text": "&nbsp;",
-    "image": "Multimedia/f0730000-bb04-7aea-abcb-08da293cde9c.JPG",
+    "image": "f0730000-bb04-7aea-abcb-08da293cde9c.JPG",
     "anwsers": [
       "4.",
       "3.",
@@ -1870,7 +1870,7 @@
   {
     "id": 165,
     "text": "Na podstawie ilustracji przedstawiającej okno konfiguracji przełącznika można stwierdzić, że",
-    "image": "Multimedia/f0730000-bb04-7aea-f7c7-08da293ba7e5.JPG",
+    "image": "f0730000-bb04-7aea-f7c7-08da293ba7e5.JPG",
     "anwsers": [
       "maksymalny czas pomiędzy zmianami statusu łącza wynosi 5 sekund.",
       "minimalny czas krążenia w sieci komunikat&oacute;w protokołu BPDU wynosi 25 sekund.",
@@ -1959,7 +1959,7 @@
   {
     "id": 173,
     "text": "Na ilustracji jest przedstawiony",
-    "image": "Multimedia/f0730000-bb04-7aea-735d-08da29381410.JPG",
+    "image": "f0730000-bb04-7aea-735d-08da29381410.JPG",
     "anwsers": [
       "panel krosowy.",
       "koncentrator.",
@@ -1982,7 +1982,7 @@
   {
     "id": 175,
     "text": "Oznaczenie przedstawionego procesora informuje o",
-    "image": "Multimedia/47ec0000-f683-928a-c0c0-08da29211756.JPG",
+    "image": "47ec0000-f683-928a-c0c0-08da29211756.JPG",
     "anwsers": [
       "bardzo niskim zużyciu energii przez procesor.",
       "braku blokady mnożnika (unlocked).",
@@ -1994,7 +1994,7 @@
   {
     "id": 176,
     "text": "Na ilustracji przedstawiono&nbsp;",
-    "image": "Multimedia/47ec0000-f683-928a-af29-08da292bebc9.JPG",
+    "image": "47ec0000-f683-928a-af29-08da292bebc9.JPG",
     "anwsers": [
       "tester płyt gł&oacute;wnych.",
       "czujnik temperatury.",
@@ -2006,7 +2006,7 @@
   {
     "id": 177,
     "text": "Podczas podłączenia sprawnego monitora do innego komputera jest wyświetlany komunikat przedstawiony&nbsp;<br></br>na ilustracji. Pojawienie się komunikatu jest spowodowane",
-    "image": "Multimedia/47ec0000-f683-928a-3818-08da292dbae7.JPG",
+    "image": "47ec0000-f683-928a-3818-08da292dbae7.JPG",
     "anwsers": [
       "zbyt wysoką lub zbyt niską częstotliwością sygnału.",
       "uszkodzeniem monitora podczas podłączania.",
@@ -2051,7 +2051,7 @@
   {
     "id": 181,
     "text": "W tabeli przedstawiono parametry zestawu komputerowego. Ponieważ jego karta graficzna uległa&nbsp;<br></br>uszkodzeniu, należy ją wymienić na kartę graficzną o parametrach przedstawionych w ramce. W związku&nbsp;<br></br>z tym modernizacja tego komputera wymaga r&oacute;wnież wymiany",
-    "image": "Multimedia/47ec0000-f683-928a-f0ce-08da2921cf4e.JPG",
+    "image": "47ec0000-f683-928a-f0ce-08da2921cf4e.JPG",
     "anwsers": [
       "zasilacza.",
       "procesora.",
@@ -2074,7 +2074,7 @@
   {
     "id": 183,
     "text": "Na ilustracji jest przedstawiona konfiguracja",
-    "image": "Multimedia/f0730000-bb04-7aea-fef8-08da293c4165.JPG",
+    "image": "f0730000-bb04-7aea-fef8-08da293c4165.JPG",
     "anwsers": [
       "rezerwacji adres&oacute;w MAC.",
       "przekierowania port&oacute;w.",
@@ -2108,7 +2108,7 @@
   {
     "id": 186,
     "text": "Na ilustracji jest przedstawiony symbol graficzny",
-    "image": "Multimedia/47ec0000-f683-928a-94c1-08da292ecca4.JPG",
+    "image": "47ec0000-f683-928a-94c1-08da292ecca4.JPG",
     "anwsers": [
       "punktu dostępowego.",
       "przełącznika.",
@@ -2120,7 +2120,7 @@
   {
     "id": 187,
     "text": "W Wierszu polecenia wydano komendę: <span style=\"font-family: 'courier new', courier, monospace;\">wykonaj.bat przyklad.txt</span>",
-    "image": "Multimedia/47ec0000-f683-928a-240f-08da37267d3d.png",
+    "image": "47ec0000-f683-928a-240f-08da37267d3d.png",
     "anwsers": [
       "nadanie dla pliku <em>przykład.txt </em>atrybut&oacute;w ukryty, skompresowany, tylko do odczytu",
       "nadanie dla pliku <em>wykonaj.bat</em> atrybut&oacute;w ukryty, systemowy, tylko do odczytu",
@@ -2154,7 +2154,7 @@
   {
     "id": 190,
     "text": "Podczas konfiguracji rutera, przedstawionej w filmie, wykorzystano funkcję służącą do",
-    "video": "Multimedia/47ec0000-f683-928a-2142-08da292ad937.mp4",
+    "video": "47ec0000-f683-928a-2142-08da292ad937.mp4",
     "anwsers": [
       "utworzenia polisy dla komputera o nazwie <em>Stacja002</em>, aby m&oacute;gł łączyć się do rutera łączem<br></br>przewodowym.",
       "rezerwacji adresu IP z puli adres&oacute;w określonych przez serwer DHCP dla komputera o podanym<br></br>adresie MAC.",
@@ -2221,7 +2221,7 @@
   {
     "id": 196,
     "text": "W tabeli jest przedstawiony fragment procesu komunikacji serwera ze stacją roboczą przechwycony przez&nbsp;<br></br>program Wireshark. Kt&oacute;rej usługi dotyczy ta komunikacja?",
-    "image": "Multimedia/f0730000-bb04-7aea-441b-08da293f57c2.JPG",
+    "image": "f0730000-bb04-7aea-441b-08da293f57c2.JPG",
     "anwsers": [
       "WWW",
       "DHCP",
@@ -2244,7 +2244,7 @@
   {
     "id": 198,
     "text": "Wskaż narzędzie służące do mocowania w złączach pojedynczej żyły przewodu U/UTP.",
-    "image": "Multimedia/24480000-5d64-0015-c4a0-08d912f827b7.PNG",
+    "image": "24480000-5d64-0015-c4a0-08d912f827b7.PNG",
     "anwsers": [
       "Narzędzie 4.",
       "Narzędzie 3.",
@@ -2300,7 +2300,7 @@
   {
     "id": 203,
     "text": "Po sprawdzeniu komputera programem diagnostycznym wykryto, że temperatura pracy karty graficznej wynosi 87 °C. W takim przypadku serwisant powinien",
-    "image": "Multimedia/24480000-5d64-0015-eb73-08d912f6b8bd.PNG",
+    "image": "24480000-5d64-0015-eb73-08d912f6b8bd.PNG",
     "anwsers": [
       "wymienić dysk twardy na nowy, o podobnej wielkości i prędkości obrotowej.",
       "zainstalować dodatkowy moduł pamięci RAM, aby odciążyć kartę graficzną.",
@@ -2334,7 +2334,7 @@
   {
     "id": 206,
     "text": "Przedstawione narzędzie może być wykorzystane do",
-    "image": "Multimedia/24480000-5d64-0015-36a9-08d912f62a1a.PNG",
+    "image": "24480000-5d64-0015-36a9-08d912f62a1a.PNG",
     "anwsers": [
       "utrzymania drukarki w czystości.",
       "pomiaru wartości napięcia w zasilaczu.",
@@ -2357,7 +2357,7 @@
   {
     "id": 208,
     "text": "W przedstawionym zasilaczu transformator oznaczono znakiem",
-    "image": "Multimedia/24480000-5d64-0015-6484-08d912f37adc.PNG",
+    "image": "24480000-5d64-0015-6484-08d912f37adc.PNG",
     "anwsers": [
       "4.",
       "3.",
@@ -2413,7 +2413,7 @@
   {
     "id": 213,
     "text": "Przedstawiony na rysunku element elektroniczny to",
-    "image": "Multimedia/24480000-5d64-0015-619b-08d912f3bd60.PNG",
+    "image": "24480000-5d64-0015-619b-08d912f3bd60.PNG",
     "anwsers": [
       "kondensator.",
       "tranzystor.",
@@ -2425,7 +2425,7 @@
   {
     "id": 214,
     "text": "Przedstawione na rysunku narzędzie służy do testowania",
-    "image": "Multimedia/24480000-5d64-0015-15e5-08d912f860c4.PNG",
+    "image": "24480000-5d64-0015-15e5-08d912f860c4.PNG",
     "anwsers": [
       "okablowania LAN.",
       "karty sieciowej.",
@@ -2437,7 +2437,7 @@
   {
     "id": 215,
     "text": "Na rysunku przedstawiono symbol graficzny",
-    "image": "Multimedia/24480000-5d64-0015-9680-08d912f756c2.PNG",
+    "image": "24480000-5d64-0015-9680-08d912f756c2.PNG",
     "anwsers": [
       "koncentratora.",
       "regeneratora.",
@@ -2482,7 +2482,7 @@
   {
     "id": 219,
     "text": "Na filmie zostal pokazany montaz",
-    "video": "Multimedia/24480000-5d64-0015-80d5-08d912f42ba4.mp4",
+    "video": "24480000-5d64-0015-80d5-08d912f42ba4.mp4",
     "anwsers": [
       "radiatora.",
       "procesora.",
@@ -2494,7 +2494,7 @@
   {
     "id": 220,
     "text": "Na obrazie przedstawiono interfejs komputera przeznaczony do podłączenia",
-    "image": "Multimedia/24480000-5d64-0015-1186-08d912f5313c.PNG",
+    "image": "24480000-5d64-0015-1186-08d912f5313c.PNG",
     "anwsers": [
       "skanera lustrzanego.",
       "drukarki laserowej.",
@@ -2572,7 +2572,7 @@
   {
     "id": 227,
     "text": "Na podstawie zrzutu ekranu przedstawiającego konfigurację przełącznika można stwierdzić, że",
-    "image": "Multimedia/24480000-5d64-0015-61ed-08d912f977bc.PNG",
+    "image": "24480000-5d64-0015-61ed-08d912f977bc.PNG",
     "anwsers": [
       "maksymalny czas pomiędzy zmianami statusu łącza wynosi 5 sekund.",
       "minimalny czas krążenia w sieci komunikatów protokołu BPDU wynosi 25 sekund.",
@@ -2595,7 +2595,7 @@
   {
     "id": 229,
     "text": "Ktory typ złącza na płycie głównej umożliwia zamontowanie przedstawionej karty graficznej?",
-    "image": "Multimedia/24480000-5d64-0015-a3f3-08d912f4f9cc.PNG",
+    "image": "24480000-5d64-0015-a3f3-08d912f4f9cc.PNG",
     "anwsers": [
       "PCIe x16",
       "PCIe x1",
@@ -2607,7 +2607,7 @@
   {
     "id": 230,
     "text": "Która bramka logiczna jest opisana za pomocą przedstawionego wyrażenia?",
-    "image": "Multimedia/24480000-5d64-0015-3cd9-08d912f342bc.PNG",
+    "image": "24480000-5d64-0015-3cd9-08d912f342bc.PNG",
     "anwsers": [
       "Bramka 4",
       "Bramka 3",
@@ -2630,7 +2630,7 @@
   {
     "id": 232,
     "text": "Przedstawiony opis usterki i procedura jej rozwiązania zawarta w dokumentacji technicznej dotyczy problemu związanego",
-    "image": "Multimedia/24480000-5d64-0015-29e0-08d912fae472.PNG",
+    "image": "24480000-5d64-0015-29e0-08d912fae472.PNG",
     "anwsers": [
       "z niepoprawnym wydrukiem z drukarki termosublimacyjnej.",
       "z konfiguracją skanera bębnowego do pracy sieciowej.",
