@@ -1,5 +1,16 @@
 <div class="mt-6 w-full max-w-2xl mx-auto text-white text-center px-2">
     <div class="mb-6">
+        <h1 class="text-2xl font-bold">Jakies coski</h1>
+
+        <a
+            href="/tests/inf02-2022"
+            class="block w-full bg-gray-900 py-2 px-4 rounded my-2 hover:bg-gray-800"
+        >
+            Baza INF02 2022
+        </a>
+    </div>
+
+    <div class="mb-6">
         <h1 class="text-2xl font-bold">Normalne</h1>
 
         <a
