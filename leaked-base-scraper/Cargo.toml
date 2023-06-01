@@ -7,4 +7,7 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.71"
+regex = "1.8.3"
+serde = { version = "1.0.163", features = ["derive"] }
+serde_json = "1.0.96"
 tl = "0.7.7"

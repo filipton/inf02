@@ -111,6 +111,17 @@
                     alt=""
                 />
             {/if}
+
+            {#if question.video}
+                <video
+                    class="mx-auto"
+                    width="100%"
+                    controls
+                    src="/videos/{question.video}"
+                >
+                    <track kind="captions" />
+                </video>
+            {/if}
         </div>
 
         <div>
