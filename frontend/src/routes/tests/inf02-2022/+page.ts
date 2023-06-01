@@ -1,14 +1,15 @@
 import { browser } from '$app/environment';
 import { docs } from '$lib/stores';
-import type { DocsEntry } from '$lib/types';
 import type { PageLoad, PageLoadEvent } from './$types';
 
 export const load = (async (event: PageLoadEvent) => {
     if (!browser) return;
-    const response = await event.fetch("/docs.json", {
+    const response = await event.fetch("/inf02-2022.json", {
         cache: "no-cache"
     });
 
-    let _docs: DocsEntry[] = await response.json();
-    docs.set(_docs);
+    let inf02 = await response.json();
+    return {
+        inf02
+    };
 }) satisfies PageLoad;
