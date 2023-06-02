@@ -1857,8 +1857,8 @@
   },
   {
     "id": 164,
-    "text": "&nbsp;",
-    "image": "f0730000-bb04-7aea-abcb-08da293cde9c.JPG",
+    "text": "Na ilustracji jest przedstawione okno konfiguracji urządzenia dostępu do lokalnej sieci bezprzewodowej. Aby zmienić identyfikator sieci wykorzystywany podczas próby nawiązywania połączenia z punktem dostępowym, należy użyć pole oznaczone numerem",
+    "image": "f0730000-b10b04-7aea-abcb-08da293cde9c.JPG",
     "anwsers": [
       "4.",
       "3.",
@@ -1947,7 +1947,7 @@
   },
   {
     "id": 172,
-    "text": "<span style=\"font-family: 'courier new', courier, monospace;\">&nbsp;</span>",
+    "text": "Użycie przedstawionego w ramce polecenia w systemie Linux spowoduje <b>tar –xf dane.tar</b>",
     "anwsers": [
       "utworzenie archiwum <em>dane.tar</em> zawierające kopię katalogu /<em>home</em>",
       "wyodrębnienie danych z archiwum o nazwie <em>dane.tar</em>",
@@ -2606,7 +2606,7 @@
   },
   {
     "id": 230,
-    "text": "Która bramka logiczna jest opisana za pomocą przedstawionego wyrażenia?",
+    "text": "Która bramka logiczna jest opisana za pomocą przedstawionego wyrażenia? A (+) B",
     "image": "24480000-5d64-0015-3cd9-08d912f342bc.PNG",
     "anwsers": [
       "Bramka 4",
