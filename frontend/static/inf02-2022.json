@@ -1858,7 +1858,7 @@
   {
     "id": 164,
     "text": "Na ilustracji jest przedstawione okno konfiguracji urządzenia dostępu do lokalnej sieci bezprzewodowej. Aby zmienić identyfikator sieci wykorzystywany podczas próby nawiązywania połączenia z punktem dostępowym, należy użyć pole oznaczone numerem",
-    "image": "f0730000-b10b04-7aea-abcb-08da293cde9c.JPG",
+    "image": "f0730000-bb04-7aea-abcb-08da293cde9c.JPG",
     "anwsers": [
       "4.",
       "3.",
@@ -2606,7 +2606,7 @@
   },
   {
     "id": 230,
-    "text": "Która bramka logiczna jest opisana za pomocą przedstawionego wyrażenia? A (+) B",
+    "text": "Która bramka logiczna jest opisana za pomocą przedstawionego wyrażenia?",
     "image": "24480000-5d64-0015-3cd9-08d912f342bc.PNG",
     "anwsers": [
       "Bramka 4",
