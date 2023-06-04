@@ -44,7 +44,9 @@
     }
 
     async function getNextQuestion() {
+        console.log("getNextQuestion");
         if (!selected && question) return;
+        console.log("getNextQuestion2");
         selected = false;
 
         if (good.length == base.length) {
@@ -76,6 +78,8 @@
 
         question = pool[0];
         pool = pool.slice(1);
+
+        console.log(question);
 
         await scrambleAnwsers();
     }
@@ -116,12 +120,15 @@
     }
 
     function startOver() {
+        // @ts-ignore
+        question = null;
+
         done = false;
         good = [];
         wrong = [];
 
-        updateProgressBar();
         getNextQuestion();
+        updateProgressBar();
         save();
     }
 
