@@ -1,93 +1,16 @@
 <script lang="ts">
     import type { Question } from "$lib/types";
-    import QuestionElement from "$lib/components/QuestionElement.svelte";
-    import QuestionsHandler from "$lib/components/QuestionsHandler.svelte";
     import { questions } from "$lib/stores";
-    import { browser } from "$app/environment";
-    import { shuffleArray } from "$lib/utils";
+    import OneQuestionTest from "$lib/components/OneQuestionTest.svelte";
 
-    let questionsPool: Question[];
-    let shownQuestion: Question;
+    let base: Question[];
+    questions.subscribe((x) => {
+        if (base || !x) return;
 
-    let selected = false;
-
-    questions.subscribe(async () => {
-        if (!browser || questionsPool) return;
-        await getNextQuestion();
+        base = x.filter((x) => x.starred);
     });
-
-    async function getNextQuestion() {
-        selected = false;
-        if (!questionsPool || questionsPool.length == 0) {
-            questionsPool = JSON.parse(
-                JSON.stringify($questions.filter((q) => q.starred))
-            );
-        }
-
-        let randomId = Math.floor(Math.random() * questionsPool.length);
-        shownQuestion = questionsPool[randomId];
-        questionsPool = removeAt(questionsPool, randomId);
-
-        await scrambleAnwsers();
-    }
-
-    function removeAt(array: any[], index: number) {
-        return array.filter((_, i) => i !== index);
-    }
-
-    async function scrambleAnwsers() {
-        let old = shownQuestion.anwsers[shownQuestion.correct - 1];
-        shuffleArray(shownQuestion.anwsers);
-
-        shownQuestion.correct =
-            shownQuestion.anwsers.findIndex((x) => x == old) + 1;
-    }
-
-    async function onKeyDown(e: KeyboardEvent) {
-        switch (e.key) {
-            case "1":
-                shownQuestion.selected = 1;
-                selected = true;
-                return;
-            case "2":
-                shownQuestion.selected = 2;
-                selected = true;
-                return;
-            case "3":
-                shownQuestion.selected = 3;
-                selected = true;
-                return;
-            case "4":
-                shownQuestion.selected = 4;
-                selected = true;
-                return;
-            case "Enter":
-                await getNextQuestion();
-                return;
-        }
-    }
 </script>
 
-<svelte:window on:keydown={onKeyDown} />
-
-<QuestionsHandler>
-    {#if shownQuestion}
-        <button
-            class="block w-full bg-gray-900 text-white py-2 px-4 rounded mb-8 hover:bg-gray-800"
-            on:click={getNextQuestion}
-        >
-            Nastepne pytanie
-        </button>
-
-        <QuestionElement
-            question={shownQuestion}
-            questionNumber={shownQuestion ? shownQuestion.id + 1 : -1}
-            ended={selected}
-            on:click={() => (selected = true)}
-        />
-    {:else}
-        <div class="text-center">
-            <h1 class="text-2xl font-bold mb-4">Brak pytań z gwiazdka</h1>
-        </div>
-    {/if}
-</QuestionsHandler>
+{#if base}
+    <OneQuestionTest {base} />
+{/if}

@@ -8,6 +8,7 @@
 
     export let base: Question[] = [];
     export let key: string = "q";
+    export let starEnabled: boolean = true;
 
     let pool: Question[] = [];
     let question: Question;
@@ -177,6 +178,7 @@
             questionNumber={question ? question.id + 1 : -1}
             ended={selected}
             useKeyboard={true}
+            starEnabled
             on:click={afterQuestion}
         />
     {/if}
