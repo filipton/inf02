@@ -70,18 +70,24 @@
 <svelte:window on:keydown={onKeyDown} />
 
 <QuestionsHandler>
-    <button
-        class="block w-full bg-gray-900 text-white py-2 px-4 rounded mb-8 hover:bg-gray-800"
-        on:click={getNextQuestion}
-    >
-        Nastepne pytanie
-    </button>
+    {#if base.length == 0}
+        <div class="text-center text-2xl font-bold">
+            Brak pytań do wyświetlenia
+        </div>
+    {:else}
+        <button
+            class="block w-full bg-gray-900 text-white py-2 px-4 rounded mb-8 hover:bg-gray-800"
+            on:click={getNextQuestion}
+        >
+            Nastepne pytanie
+        </button>
 
-    <QuestionElement
-        question={shownQuestion}
-        questionNumber={shownQuestion ? shownQuestion.id + 1 : -1}
-        ended={selected}
-        {starEnabled}
-        on:click={() => (selected = true)}
-    />
+        <QuestionElement
+            question={shownQuestion}
+            questionNumber={shownQuestion ? shownQuestion.id + 1 : -1}
+            ended={selected}
+            {starEnabled}
+            on:click={() => (selected = true)}
+        />
+    {/if}
 </QuestionsHandler>

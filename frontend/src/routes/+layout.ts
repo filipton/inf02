@@ -10,7 +10,7 @@ export const load = (async (event: LayoutLoadEvent) => {
     });
 
     let _questions: Question[] = await response.json();
-    let _starred: Number[] = JSON.parse(localStorage.getItem("starred") || "[]");
+    let _starred: Number[] = JSON.parse(localStorage.getItem("starred_new") || "[]");
 
     _questions = _questions.map((q, i) => {
         q.starred = _starred.includes(i);
