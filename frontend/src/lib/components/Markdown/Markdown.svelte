@@ -21,15 +21,15 @@
                     url[0],
                     url[0].replace(url[1], window.location.origin + "/")
                 );
-            }
-
-            if (url[2].startsWith("#")) {
-                content = content.replace(url[0], url[2]);
             } else {
-                content = content.replace(
-                    url[0],
-                    url[0].replace(url[1], "?v=")
-                );
+                if (url[2].startsWith("#")) {
+                    content = content.replace(url[0], url[2]);
+                } else {
+                    content = content.replace(
+                        url[0],
+                        url[0].replace(url[1], "?v=")
+                    );
+                }
             }
         }
 
