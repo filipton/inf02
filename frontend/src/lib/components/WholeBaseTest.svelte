@@ -21,15 +21,21 @@
     $: percentageText = Math.round((good.length / base.length) * 10000) / 100;
 
     onMount(async () => {
+        if (!browser) return;
+
         await init();
     });
 
     async function init() {
-        if (!browser) return;
         wrong = JSON.parse(localStorage.getItem(`${key}Wrong`) ?? "[]");
         good = JSON.parse(localStorage.getItem(`${key}Good`) ?? "[]");
         wrong = [...new Set(wrong)];
         good = [...new Set(good)];
+
+        if (good.length > base.length) {
+            good = [];
+            wrong = [];
+        }
 
         // deep copy
         pool = JSON.parse(JSON.stringify(base));
