@@ -97,6 +97,6 @@
   },
   {
     "url": "mikrotik/DNS.md",
-    "markdown": "# DNS\nJezeli chcemy ustawic serwer DNS dla naszego mikrotika (w arkuszach jest napisane `serwer DNS interfejsu WAN: 8.8.8.8`) to:\n\n- Wchodzimy w zakladke `IP > DNS`\n- W `Servers` wpisujemy nasze servery DNS\n- Naciskamy `Apply`\n\n## Czy to napewno tak dziala?\nJezeli zrobimy konfiguracje DNS (Quicksetem)[/mikrotik/QuickSet.md] to konfiguracja bedzie wlasnie tak wygladala\n"
+    "markdown": "# DNS\nJezeli chcemy ustawic serwer DNS dla naszego mikrotika (w arkuszach jest napisane `serwer DNS interfejsu WAN: 8.8.8.8`) to:\n\n- Wchodzimy w zakladke `IP > DNS`\n- W `Servers` wpisujemy nasze servery DNS\n- Naciskamy `Apply`\n\n## Czy to napewno tak dziala?\nJezeli zrobimy konfiguracje DNS [Quicksetem](/mikrotik/QuickSet.md) to konfiguracja bedzie wlasnie tak wygladala\n"
   }
 ]
