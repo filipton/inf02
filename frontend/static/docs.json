@@ -25,7 +25,7 @@
   },
   {
     "url": "Linux/Net_Tools.md",
-    "markdown": "# Net-tools\n\n`qrp` do sprawdzania adresow mac i ip\n\n`ifconfig` wyswietla konfigruacje interfejsu (między innymi ip)\n\n`ipmaddr` wyswietla mac\n\n`iptunnel` \n\n`route` pokazuje trasy routingu\n\n`nameif` \n\n`mii-tool` \n"
+    "markdown": "# Net-tools\n\n`arp` do sprawdzania adresow mac i ip\n\n`ifconfig` wyswietla konfigruacje interfejsu (między innymi ip)\n\n`ipmaddr` wyswietla mac\n\n`iptunnel` \n\n`route` pokazuje trasy routingu\n\n`nameif` \n\n`mii-tool` \n"
   },
   {
     "url": "Linux/Diagnostyka.md",
